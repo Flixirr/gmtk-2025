@@ -81,9 +81,9 @@ _data = {
 }
 
 [node name="Door" type="Node3D"]
-script = ExtResource("1_c1k58")
 
 [node name="Door1" type="StaticBody3D" parent="."]
+script = ExtResource("1_c1k58")
 
 [node name="Cube_075" type="MeshInstance3D" parent="Door1"]
 transform = Transform3D(3.46501e-05, -80, -3.49691e-06, 0, -3.49691e-06, 80, -80, -3.46501e-05, -1.5146e-12, 0, 0, 0)

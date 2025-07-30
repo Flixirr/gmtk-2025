@@ -60,6 +60,8 @@ func _physics_process(delta: float) -> void:
 	camera.transform.origin = _headbob(t_bob)
 	raycast.transform.origin = camera.transform.origin
 	
+	_handle_raycast()
+	
 	move_and_slide()
 
 func _headbob(time):
@@ -69,8 +71,7 @@ func _headbob(time):
 	return pos
 	
 	
-func handle_raycast():
+func _handle_raycast():
 	var raycast_hit = raycast.get_collider()
-	if raycast_hit is Door:
-		raycast_hit.door_open
-		print(raycast_hit)
+	if raycast_hit is Door and Input.is_action_just_pressed("interaction"):
+		raycast_hit.handle_door_open()

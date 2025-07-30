@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://bysy676ko55yd"]
+[gd_scene load_steps=9 format=4 uid="uid://bysy676ko55yd"]
 
 [ext_resource type="PackedScene" uid="uid://ddv2bijbuunr2" path="res://Scenes/Player/player.tscn" id="1_ovnwc"]
 [ext_resource type="Texture2D" uid="uid://blf8hs11lrk14" path="res://Models/Pack/Door_01.jpg" id="2_j5hpt"]
 [ext_resource type="PackedScene" uid="uid://bkdjglsg8htmx" path="res://Models/Pack/models.fbx" id="3_0tv47"]
+[ext_resource type="PackedScene" uid="uid://bk23d6oku4tym" path="res://Scenes/Enviorment/door.tscn" id="4_0tv47"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpf4d"]
 resource_name = "Door_01"
@@ -53,17 +54,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9484, 1.65646, -37.5181)
 [node name="Apartment" type="CSGCombiner3D" parent="."]
 use_collision = true
 
-[node name="Door1" type="StaticBody3D" parent="Apartment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 1.86957, 13.7831)
+[node name="Door_Openable_1" parent="Apartment" instance=ExtResource("4_0tv47")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.2357, 2.26966, -18.8667)
 
-[node name="Cube_075" type="MeshInstance3D" parent="Apartment/Door1"]
-transform = Transform3D(3.46501e-05, -80, -3.49691e-06, 0, -3.49691e-06, 80, -80, -3.46501e-05, -1.5146e-12, 0, 0, 0)
-mesh = SubResource("ArrayMesh_88cpx")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Apartment/Door1"]
-transform = Transform3D(3.46501e-05, -80, -3.49691e-06, 0, -3.49691e-06, 80, -80, -3.46501e-05, -1.5146e-12, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_j5hpt")
+[node name="Door_Openable_2" parent="Apartment" instance=ExtResource("4_0tv47")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0741, 2.26966, 13.7409)
 
 [node name="Door3" type="StaticBody3D" parent="Apartment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 1.84744, 13.7227)
@@ -74,18 +69,6 @@ mesh = SubResource("ArrayMesh_88cpx")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Apartment/Door3"]
-transform = Transform3D(3.46501e-05, -80, -3.49691e-06, 0, -3.49691e-06, 80, -80, -3.46501e-05, -1.5146e-12, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_j5hpt")
-
-[node name="Door2" type="StaticBody3D" parent="Apartment"]
-transform = Transform3D(1.19209e-07, 0, 1, 0, 1, 0, -1, 0, 1.19209e-07, -10.2785, 2, -19)
-
-[node name="Cube_075" type="MeshInstance3D" parent="Apartment/Door2"]
-transform = Transform3D(3.46501e-05, -80, -3.49691e-06, 0, -3.49691e-06, 80, -80, -3.46501e-05, -1.5146e-12, 0, 0, 0)
-mesh = SubResource("ArrayMesh_88cpx")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Apartment/Door2"]
 transform = Transform3D(3.46501e-05, -80, -3.49691e-06, 0, -3.49691e-06, 80, -80, -3.46501e-05, -1.5146e-12, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_j5hpt")
 
@@ -200,4 +183,6 @@ size = Vector3(1, 3, 1.5)
 [node name="models" parent="." instance=ExtResource("3_0tv47")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.6379, -15.9192, 153.002)
 
+[editable path="Apartment/Door_Openable_1"]
+[editable path="Apartment/Door_Openable_2"]
 [editable path="models"]
