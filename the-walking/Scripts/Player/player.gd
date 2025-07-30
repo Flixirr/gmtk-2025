@@ -12,6 +12,7 @@ const JUMP_VELOCITY = 3.0
 @export var max_cam_angle = 60
 @export var min_cam_angle = -60
 
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
@@ -24,6 +25,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(min_cam_angle), deg_to_rad(max_cam_angle))
 		raycast.rotation.x = clamp(camera.rotation.x, deg_to_rad(min_cam_angle), deg_to_rad(max_cam_angle))
+
+# Pause and clicking into game
+	if event.is_action_pressed("pause"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if event.is_action_pressed("left_click"):
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 # head bob
 var t_bob = 0.0
@@ -59,3 +67,10 @@ func _headbob(time):
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+	
+	
+func handle_raycast():
+	var raycast_hit = raycast.get_collider()
+	if raycast_hit is Door:
+		raycast_hit.door_open
+		print(raycast_hit)

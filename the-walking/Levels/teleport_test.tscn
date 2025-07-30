@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://oh285jb34sjg"]
+
+[ext_resource type="PackedScene" uid="uid://ddv2bijbuunr2" path="res://Scenes/Player/player.tscn" id="1_hfxuf"]
+
+[node name="teleportTest" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.108246, -0.354736, 2.92084)
+size = Vector3(2.26898, 0.290527, 14.8417)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04714, 0.774475, 2.92039)
+size = Vector3(0.0209961, 2.54895, 14.8446)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26705, 0.85756, 3.68848)
+size = Vector3(0.0209961, 2.54895, 16.4683)
+
+[node name="Player" parent="." instance=ExtResource("1_hfxuf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.674241, -3.68455)
+
+[node name="corner" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.9263)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="corner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99913, -0.36481, 0.161753)
+size = Vector3(8.44463, 0.291, 1.5332)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="corner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98737, 0.832275, 0.998161)
+size = Vector3(8.49377, 2.66455, 0.0919189)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="corner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.13124, 0.731408, -0.661927)
+size = Vector3(6.08582, 2.58667, 0.139709)
