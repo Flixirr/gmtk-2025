@@ -39,14 +39,20 @@ func _physics_process(delta: float) -> void:
 	
 	var input_dir := Input.get_vector("WalkLeft", "WalkRight", "WalkFwd", "WalkBack")
 	var direction = (cam_rotate.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-
-	velocity.x = (direction.x * SPEED)
-	velocity.z = (direction.z * SPEED)
+	
+	if direction:
+		velocity.x = (direction.x * SPEED)
+		velocity.z = (direction.z * SPEED)
+	else:
+		velocity.x = 0
+		velocity.z = 0
 
 	
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	camera.transform.origin = _headbob(t_bob)
 	raycast.transform.origin = camera.transform.origin
+	
+	move_and_slide()
 
 func _headbob(time):
 	var pos = Vector3.ZERO
