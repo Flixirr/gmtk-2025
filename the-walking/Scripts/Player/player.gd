@@ -32,6 +32,9 @@ func _ready() -> void:
 	GlobalVariables.player_dialogue.connect(_on_dialogue_received)
 	
 
+func rotate_cam(angles):
+	cam_rotate.rotate_y(angles)
+
 func _unhandled_input(event: InputEvent) -> void:
 	# handle focus
 	if event.is_action_pressed("Inventory"):

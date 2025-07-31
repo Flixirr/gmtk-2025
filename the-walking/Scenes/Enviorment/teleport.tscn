@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://deiy30aixjv2b"]
+
+[ext_resource type="Script" uid="uid://b786mncurcojx" path="res://Scripts/Enviorment/tp_progress.gd" id="1_lyypq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dc5qw"]
+size = Vector3(0.001, 4, 4)
+
+[node name="Teleport" type="Node3D"]
+
+[node name="TP_Target" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.17043, 0.763681, -29)
+
+[node name="TP_Space" type="Node3D" parent="." node_paths=PackedStringArray("tp_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.82957, 0.763681, -8)
+script = ExtResource("1_lyypq")
+tp_target = NodePath("../TP_Target")
+
+[node name="Area3D" type="Area3D" parent="TP_Space"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TP_Space/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.5)
+shape = SubResource("BoxShape3D_dc5qw")
+
+[connection signal="body_entered" from="TP_Space/Area3D" to="TP_Space" method="_on_area_3d_body_entered"]

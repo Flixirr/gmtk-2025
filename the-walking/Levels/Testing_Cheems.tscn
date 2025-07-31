@@ -1,10 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2c0j0823j13o"]
+[gd_scene load_steps=9 format=3 uid="uid://b2c0j0823j13o"]
 
 [ext_resource type="Material" uid="uid://cr8s6dguk66lx" path="res://Materials/Bathroom_TiLES.tres" id="1_2y0bb"]
 [ext_resource type="PackedScene" uid="uid://ddv2bijbuunr2" path="res://Scenes/Player/player.tscn" id="1_nul47"]
 [ext_resource type="PackedScene" uid="uid://b5etah3tg4qnq" path="res://Scenes/Enviorment/note.tscn" id="3_mhdjh"]
 [ext_resource type="PackedScene" uid="uid://bcio3vsodu3cj" path="res://Scenes/Enviorment/lamp.tscn" id="4_y8gl6"]
 [ext_resource type="PackedScene" uid="uid://bk23d6oku4tym" path="res://Scenes/Enviorment/door.tscn" id="5_hbxfx"]
+[ext_resource type="PackedScene" uid="uid://dgiet6r44hlw4" path="res://Levels/Apartment.tscn" id="6_aksbe"]
+[ext_resource type="PackedScene" uid="uid://deiy30aixjv2b" path="res://Scenes/Enviorment/teleport.tscn" id="7_dc5qw"]
+
+[sub_resource type="Environment" id="Environment_dc5qw"]
+ssao_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 1.0
+fog_depth_curve = 0.0272047
+fog_depth_begin = 0.0
+fog_depth_end = 15.0
 
 [node name="TestingCheems" type="Node3D"]
 
@@ -15,7 +26,7 @@ size = Vector3(29, 0.205566, 35)
 material = ExtResource("1_2y0bb")
 
 [node name="Player" parent="." instance=ExtResource("1_nul47")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83414, 16.3312, 2.84725)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.307, 24.8307, 28.7172)
 
 [node name="Note" parent="." instance=ExtResource("3_mhdjh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.808591, 0)
@@ -44,5 +55,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0722785, -0.10294, -3.02758
 
 [node name="Door1" parent="Door" index="0"]
 door_puzzle = 1
+
+[node name="Aparatment" parent="." instance=ExtResource("6_aksbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.1493, 23, 54.3853)
+
+[node name="Teleport" parent="Aparatment" instance=ExtResource("7_dc5qw")]
+
+[node name="Aparatment2" parent="." instance=ExtResource("6_aksbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.1493, 15, 54.3853)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dc5qw")
 
 [editable path="Door"]

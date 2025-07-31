@@ -43,7 +43,6 @@ mesh = SubResource("SphereMesh_uvnfx")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.551817, 0)
-visible = false
 
 [node name="PlayerUI" type="CanvasLayer" parent="."]
 
