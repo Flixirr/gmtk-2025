@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Player
 
-const SPEED = 5.0
+const SPEED = 3.0
 const JUMP_VELOCITY = 3.0
 
 @onready var cam_rotate = $CamRotate

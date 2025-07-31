@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 GlobalVariables="*res://Scripts/Global/global_variables.gd"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 Jump={
