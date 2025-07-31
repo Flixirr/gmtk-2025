@@ -75,3 +75,4 @@ func _handle_raycast():
 	var raycast_hit = raycast.get_collider()
 	if raycast_hit is Door and Input.is_action_just_pressed("interaction"):
 		raycast_hit.handle_door_open()
+		

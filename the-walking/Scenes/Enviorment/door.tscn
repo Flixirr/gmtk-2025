@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://gx4va0ay3tn6" path="res://Scripts/Enviorment/door.gd" id="1_c1k58"]
 [ext_resource type="Texture2D" uid="uid://blf8hs11lrk14" path="res://Models/Pack/Door_01.jpg" id="2_njx4n"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpf4d"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hh1p5"]
 resource_name = "Door_01"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("2_njx4n")
 emission_enabled = true
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_oytb5"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_8fnsv"]
 _surfaces = [{
 "aabb": AABB(-0.00037249, -0.000560067, -0.0221207, 0.0192385, 0.00112013, 0.043636),
 "format": 34359742465,
@@ -23,7 +23,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_88cpx"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ckfwj"]
 resource_name = "Cube_075"
 _surfaces = [{
 "aabb": AABB(-0.00037249, -0.000560067, -0.0221207, 0.0192385, 0.00112013, 0.043636),
@@ -31,7 +31,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
-"material": SubResource("StandardMaterial3D_vpf4d"),
+"material": SubResource("StandardMaterial3D_hh1p5"),
 "name": "Door_01",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -39,9 +39,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("4IyaPFrREjrGQLA84IyaPFrREjqBNrW84IyaPG/RErqBNrW84IyaPG/RErrGQLA8zkrDuVrREjrGQLA8zkrDuVrREjqBNrW84IyaPFrREjqBNrW84IyaPFrREjrGQLA8zkrDuW/RErrGQLA8zkrDuW/RErqBNrW8zkrDuVrREjqBNrW8zkrDuVrREjrGQLA84IyaPG/RErrGQLA84IyaPG/RErqBNrW8zkrDuW/RErqBNrW8zkrDuW/RErrGQLA8zkrDuW/RErqBNrW84IyaPG/RErqBNrW84IyaPFrREjqBNrW8zkrDuVrREjqBNrW84IyaPG/RErrGQLA8zkrDuW/RErrGQLA8zkrDuVrREjrGQLA84IyaPFrREjrGQLA8////f/9///////9//3///////3//f///////f/9/////f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/vwAA/3//fwAAAAD/f/9/AAAAAP9//38AAAAA/3//fwAA/38AAAAA/z//fwAAAAD/P/9/AAAAAP8//38AAAAA/z//////AAD/v/////8AAP+//////wAA/7//////AAD/v/9//38AAP8//3//fwAA/z//f/9/AAD/P/9//38AAP8/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_oytb5")
+shadow_mesh = SubResource("ArrayMesh_8fnsv")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_j5hpt"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_c1k58"]
 points = PackedVector3Array(-0.000744068, -0.000946032, -0.022446, 0.0193238, 0.00113016, 0.021846, 0.0193238, -0.000946032, 0.021846, 0.0193238, 0.00113016, -0.022446, -0.000744068, 0.00113016, 0.021846, -0.000744068, -0.000946032, 0.021846, 0.0193238, -0.000946032, -0.022446, -0.000744068, 0.00113016, -0.022446)
 
 [sub_resource type="Animation" id="Animation_v6xrn"]
@@ -86,13 +86,13 @@ _data = {
 script = ExtResource("1_c1k58")
 
 [node name="Cube_075" type="MeshInstance3D" parent="Door1"]
-transform = Transform3D(3.46501e-05, -80, -3.49691e-06, 0, -3.49691e-06, 80, -80, -3.46501e-05, -1.5146e-12, 0, 0, 0)
-mesh = SubResource("ArrayMesh_88cpx")
+transform = Transform3D(2.81532e-05, -65, -2.84124e-06, 0, -2.84124e-06, 65, -65, -2.81532e-05, -1.23061e-12, 0, 0, 0)
+mesh = SubResource("ArrayMesh_ckfwj")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door1"]
-transform = Transform3D(3.46501e-05, -80, -3.49691e-06, 0, -3.49691e-06, 80, -80, -3.46501e-05, -1.5146e-12, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_j5hpt")
+transform = Transform3D(2.81532e-05, -65, -2.84124e-06, 0, -2.84124e-06, 65, -65, -2.81532e-05, -1.23061e-12, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_c1k58")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
