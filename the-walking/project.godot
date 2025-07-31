@@ -19,11 +19,6 @@ config/icon="res://icon.svg"
 
 GlobalVariables="*res://Scripts/Global/global_variables.gd"
 
-[display]
-
-window/size/viewport_width=2160
-window/size/viewport_height=1440
-
 [input]
 
 Jump={
