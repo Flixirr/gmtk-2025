@@ -92,7 +92,7 @@ libraries = {
 }
 
 [node name="ClawHammer" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-06, -100, 0, 96.5926, -4.2222e-06, 25.8819, -25.8819, 1.13133e-06, 96.5926, 0, 0, -1)
+transform = Transform3D(-0.000361999, -100, 0, 96.5926, -0.000349664, 25.8819, -25.8819, 9.36921e-05, 96.5926, 0, 0, -1)
 layers = 2
 mesh = SubResource("ArrayMesh_v7apd")
 skeleton = NodePath("")
