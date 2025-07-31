@@ -24,6 +24,16 @@ const JUMP_VELOCITY = 3.0
 @onready var inventory_ui = $PlayerUI/InventoryUI
 @onready var inventory_cam = $PlayerUI/InventoryView
 
+
+# Inventory
+enum ITEMS {RADIO, HAMMER}
+var currently_selected : ITEMS = ITEMS.RADIO
+
+@onready var radio_item = $PlayerUI/InventoryView/SubViewport/Camera3D/InventoryItems/InventoryDoll
+@onready var hammer_item = $PlayerUI/InventoryView/SubViewport/Camera3D/InventoryItems/InventoryHammer
+
+@onready var item_name = $PlayerUI/InventoryUI/TitleText
+
 func _ready() -> void:
 	hint_text.visible = false
 	dialogue_text.text = ""
@@ -54,7 +64,19 @@ func _unhandled_input(event: InputEvent) -> void:
 			_toggle_inventory_visibility(true)
 	
 	if is_in_focus:
+		if inventory_ui.visible:
+			if event.is_action_pressed("WalkRight"):
+				item_name.text = "HAMMER"
+				hammer_item.visible = true
+				radio_item.visible = false
+			elif event.is_action_pressed("WalkLeft"):
+				item_name.text = "RADIO"
+				radio_item.visible = true
+				hammer_item.visible = false
+			elif event.is_action_pressed("UseItem"):
+				pass
 		return
+	
 	if event is InputEventMouseMotion:
 		cam_rotate.rotate_y(-event.relative.x * GlobalVariables.mouse_sensitivity)
 		camera.rotate_x(-event.relative.y * GlobalVariables.mouse_sensitivity)
