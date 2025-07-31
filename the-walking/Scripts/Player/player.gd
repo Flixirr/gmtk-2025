@@ -103,10 +103,12 @@ var raycast_hit
 func _physics_process(delta: float) -> void:
 	_handle_raycast()
 	
-	if is_in_focus:
-		return
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	
+	if is_in_focus:
+		return
+	
 	
 	if Input.is_action_just_pressed("Jump"):
 		velocity.y = JUMP_VELOCITY
