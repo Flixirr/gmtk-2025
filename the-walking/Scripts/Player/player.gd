@@ -13,11 +13,25 @@ const JUMP_VELOCITY = 3.0
 @export var min_cam_angle = -60
 
 
+# UI
+@onready var player_ui = $PlayerUI/Player
+@onready var hint_text = $PlayerUI/Player/HintText
+@onready var dialogue_text = $PlayerUI/Player/DialogueText
+
+@onready var note_ui = $PlayerUI/Note
+@onready var note_text = $PlayerUI/Note/RichTextLabel
+
 func _ready() -> void:
+	hint_text.visible = false
+	dialogue_text.text = ""
+	note_text.text = ""
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	GlobalVariables.player_dialogue.connect(_on_dialogue_received)
 	
 
 func _unhandled_input(event: InputEvent) -> void:
+	if is_in_focus:
+		return
 	if event is InputEventMouseMotion:
 		cam_rotate.rotate_y(-event.relative.x * GlobalVariables.mouse_sensitivity)
 		camera.rotate_x(-event.relative.y * GlobalVariables.mouse_sensitivity)
@@ -38,7 +52,13 @@ var t_bob = 0.0
 const BOB_FREQ = 2.0
 const BOB_AMP = 0.08
 
+var raycast_hit
+
 func _physics_process(delta: float) -> void:
+	_handle_raycast()
+	
+	if is_in_focus:
+		return
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
@@ -54,13 +74,12 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = 0
 		velocity.z = 0
-
 	
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	camera.transform.origin = _headbob(t_bob)
 	raycast.transform.origin = camera.transform.origin
 	
-	_handle_raycast()
+	
 	
 	move_and_slide()
 
@@ -70,9 +89,36 @@ func _headbob(time):
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
 	
-	
+
+var is_in_focus = false
+
 func _handle_raycast():
-	var raycast_hit = raycast.get_collider()
-	if raycast_hit is Door and Input.is_action_just_pressed("interaction"):
-		raycast_hit.handle_door_open()
-		
+	raycast_hit = raycast.get_collider()
+	if raycast_hit is Interactable:
+		hint_text.visible = true
+	else:
+		hint_text.visible = false
+
+	if Input.is_action_just_pressed("interaction"):
+		if is_in_focus:
+			is_in_focus = false
+			player_ui.visible = true
+			note_ui.visible = false
+		elif raycast_hit is Door:
+			raycast_hit.handle_door_open()
+		elif raycast_hit is Note:
+			player_ui.visible = false
+			note_ui.visible = true
+			note_text.text = raycast_hit.note_text
+			is_in_focus = true
+		elif raycast_hit is Lamp:
+			raycast_hit.handle_toggle()
+
+
+func _on_dialogue_received(dialogue_txt):
+	$PlayerUI/Player/Timer.stop()
+	dialogue_text.text = "[b][color=blue]Player:[/color][/b] %s" % dialogue_txt
+	$PlayerUI/Player/Timer.start(3)
+
+func _on_timer_timeout() -> void:
+	dialogue_text.text = ""

@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bysy676ko55yd"]
+[gd_scene load_steps=5 format=3 uid="uid://bysy676ko55yd"]
 
 [ext_resource type="PackedScene" uid="uid://dgiet6r44hlw4" path="res://Levels/Apartment.tscn" id="1_j5hpt"]
 [ext_resource type="PackedScene" uid="uid://ddv2bijbuunr2" path="res://Scenes/Player/player.tscn" id="1_ovnwc"]
 [ext_resource type="PackedScene" uid="uid://bkdjglsg8htmx" path="res://Models/Pack/models.fbx" id="3_0tv47"]
+
+[sub_resource type="Environment" id="Environment_j5hpt"]
+ssao_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 1.0
+fog_height_density = -1.0
+fog_depth_curve = 0.0270236
+fog_depth_begin = 0.0
+fog_depth_end = 30.0
 
 [node name="MainLevel" type="Node3D"]
 
@@ -13,5 +23,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9484, 1.65646, -9.17378)
 
 [node name="models" parent="." instance=ExtResource("3_0tv47")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.6379, -15.9192, 153.002)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_j5hpt")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.978846, 0.204599, 0, -0.204599, -0.978846, 0, 12.4671, 0)
+light_energy = 0.1
 
 [editable path="models"]

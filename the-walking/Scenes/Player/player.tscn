@@ -33,7 +33,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.776998, 0)
 [node name="Camera3D" type="Camera3D" parent="CamRotate/Head"]
 
 [node name="RayCast3D" type="RayCast3D" parent="CamRotate/Head"]
-target_position = Vector3(0, 0, -3)
+target_position = Vector3(0, 0, -2)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CamRotate/Head/RayCast3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.00186)
@@ -41,3 +41,113 @@ mesh = SubResource("SphereMesh_uvnfx")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.551817, 0)
+visible = false
+
+[node name="PlayerUI" type="CanvasLayer" parent="."]
+
+[node name="Player" type="Control" parent="PlayerUI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HintText" type="Label" parent="PlayerUI/Player"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -11.0
+offset_right = 142.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "[F] Interact"
+
+[node name="DialogueText" type="RichTextLabel" parent="PlayerUI/Player"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -419.0
+offset_top = -33.0
+offset_right = 485.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+bbcode_enabled = true
+text = "[b][color=blue]Player:[/color][/b] This is a test dialogue"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="PlayerUI/Player"]
+wait_time = 3.0
+
+[node name="Note" type="Control" parent="PlayerUI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="PlayerUI/Note"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.184314)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PlayerUI/Note"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.5
+offset_top = -199.5
+offset_right = 150.5
+offset_bottom = 199.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "This is a test note
+
+- Test signature"
+horizontal_alignment = 1
+
+[node name="DialogueText" type="RichTextLabel" parent="PlayerUI/Note"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -419.0
+offset_top = -33.0
+offset_right = 485.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "Press [F] to close"
+horizontal_alignment = 1
+
+[connection signal="timeout" from="PlayerUI/Player/Timer" to="." method="_on_timer_timeout"]
