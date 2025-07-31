@@ -29,6 +29,9 @@ const JUMP_VELOCITY = 3.0
 enum ITEMS {RADIO, HAMMER}
 var currently_selected : ITEMS = ITEMS.RADIO
 
+var has_radio = false
+var has_hammer = false
+
 @onready var radio_item = $PlayerUI/InventoryView/SubViewport/Camera3D/InventoryItems/InventoryDoll
 @onready var hammer_item = $PlayerUI/InventoryView/SubViewport/Camera3D/InventoryItems/InventoryHammer
 
@@ -65,11 +68,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if is_in_focus:
 		if inventory_ui.visible:
-			if event.is_action_pressed("WalkRight"):
+			if event.is_action_pressed("WalkRight") and has_hammer:
 				item_name.text = "HAMMER"
 				hammer_item.visible = true
 				radio_item.visible = false
-			elif event.is_action_pressed("WalkLeft"):
+			elif event.is_action_pressed("WalkLeft") and has_radio:
 				item_name.text = "RADIO"
 				radio_item.visible = true
 				hammer_item.visible = false
@@ -141,6 +144,10 @@ var is_in_focus = false
 func _handle_raycast():
 	raycast_hit = raycast.get_collider()
 	if raycast_hit is Interactable:
+		hint_text.text = "[F] Interact"
+		hint_text.visible = true
+	elif raycast_hit is Pickup:
+		hint_text.text = "[F] Pickup"
 		hint_text.visible = true
 	else:
 		hint_text.visible = false
@@ -160,6 +167,12 @@ func _handle_raycast():
 			is_in_focus = true
 		elif raycast_hit is Lamp:
 			raycast_hit.handle_toggle()
+		elif raycast_hit is Radio:
+			has_radio = true
+			raycast_hit.pickup()
+		elif raycast_hit is Hammer:
+			has_hammer = true
+			raycast_hit.pickup()
 
 
 func _on_dialogue_received(dialogue_txt):
@@ -171,5 +184,17 @@ func _on_timer_timeout() -> void:
 	dialogue_text.text = ""
 
 func _toggle_inventory_visibility(visibility):
+	if has_radio:
+		item_name.text = "RADIO"
+		radio_item.visible = true
+		hammer_item.visible = false
+	elif has_hammer:
+		item_name.text = "HAMMER"
+		hammer_item.visible = true
+		radio_item.visible = false
+	else:
+		item_name.text = ""
+		hammer_item.visible = false
+		radio_item.visible = false
 	inventory_cam.visible = visibility
 	inventory_ui.visible = visibility

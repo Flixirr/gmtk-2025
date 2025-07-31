@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=4 uid="uid://cjx3rc183ftcx"]
+[gd_scene load_steps=8 format=4 uid="uid://bihonq1jcroaw"]
 
-[ext_resource type="Script" uid="uid://dttk0iqu40hjt" path="res://Scripts/Player/ItemView.gd" id="1_lqguc"]
-[ext_resource type="Texture2D" uid="uid://ch38cuhga1ncy" path="res://Models/Pack2/Objects_Interior(Village)_Alpha/Textures/Radio_01.png" id="2_lqguc"]
+[ext_resource type="Script" uid="uid://c6l7r5ouyhxrg" path="res://Scripts/Enviorment/radio.gd" id="1_lrbga"]
+[ext_resource type="Texture2D" uid="uid://ch38cuhga1ncy" path="res://Models/Pack2/Objects_Interior(Village)_Alpha/Textures/Radio_01.png" id="2_bwr08"]
+[ext_resource type="AudioStream" uid="uid://b782p33oijahc" path="res://Audio/Music/wheelchair horror ost(1).mp3" id="3_lgygd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p5gvt"]
 resource_name = "Radio_01"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_lqguc")
+albedo_texture = ExtResource("2_bwr08")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_iflqt"]
@@ -23,7 +24,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_v7apd"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_24vgu"]
 resource_name = "Radio_01"
 _surfaces = [{
 "aabb": AABB(-0.00664706, -0.00299782, -0.00285434, 0.0132941, 0.00599565, 0.0176135),
@@ -41,54 +42,25 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_iflqt")
 
-[sub_resource type="Animation" id="Animation_xpcdj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Radio_01:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-1.5708, -3.14159, 0)]
-}
+[sub_resource type="BoxShape3D" id="BoxShape3D_oy1bq"]
+size = Vector3(0.541748, 0.256409, 0.251709)
 
-[sub_resource type="Animation" id="Animation_a3d8c"]
-resource_name = "rotate_item"
-length = 5.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Radio_01:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-1.5708, 0, 0), Vector3(-1.5708, 6.28319, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_mtuoh"]
-_data = {
-&"RESET": SubResource("Animation_xpcdj"),
-&"rotate_item": SubResource("Animation_a3d8c")
-}
-
-[node name="InventoryDoll" type="Node3D"]
-script = ExtResource("1_lqguc")
+[node name="Radio" type="StaticBody3D"]
+script = ExtResource("1_lrbga")
 
 [node name="Radio_01" type="MeshInstance3D" parent="."]
-transform = Transform3D(-39.5679, 0.000100312, 3.63128e-10, 0, -0.000143235, 39.5679, 0.000100312, 39.5679, 0.000143235, 0, 0, -1)
-layers = 2
-mesh = SubResource("ArrayMesh_v7apd")
+transform = Transform3D(-39.5679, 3.45914e-06, 4.12361e-13, 0, -4.71686e-06, 39.5679, 3.45914e-06, 39.5679, 4.71686e-06, 0, 0, 0)
+mesh = SubResource("ArrayMesh_24vgu")
 skeleton = NodePath("")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_mtuoh")
-}
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00378418, 0.0105896, 0.000366211)
+shape = SubResource("BoxShape3D_oy1bq")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_lgygd")
+volume_db = 10.0
+autoplay = true
+max_distance = 11.0
+bus = &"Music"
+parameters/looping = true

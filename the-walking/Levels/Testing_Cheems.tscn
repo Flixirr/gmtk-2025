@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2c0j0823j13o"]
+[gd_scene load_steps=11 format=3 uid="uid://b2c0j0823j13o"]
 
 [ext_resource type="Material" uid="uid://cr8s6dguk66lx" path="res://Materials/Bathroom_TiLES.tres" id="1_2y0bb"]
 [ext_resource type="PackedScene" uid="uid://ddv2bijbuunr2" path="res://Scenes/Player/player.tscn" id="1_nul47"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bk23d6oku4tym" path="res://Scenes/Enviorment/door.tscn" id="5_hbxfx"]
 [ext_resource type="PackedScene" uid="uid://dgiet6r44hlw4" path="res://Levels/Apartment.tscn" id="6_aksbe"]
 [ext_resource type="PackedScene" uid="uid://deiy30aixjv2b" path="res://Scenes/Enviorment/teleport.tscn" id="7_dc5qw"]
+[ext_resource type="PackedScene" uid="uid://bihonq1jcroaw" path="res://Scenes/Enviorment/radio.tscn" id="8_jb4q0"]
+[ext_resource type="PackedScene" uid="uid://bc7ho6wepf3rn" path="res://Scenes/Enviorment/hammer.tscn" id="9_24vgu"]
 
 [sub_resource type="Environment" id="Environment_dc5qw"]
 ssao_enabled = true
@@ -66,5 +68,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.1493, 15, 54.3853)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dc5qw")
+
+[node name="Radio" parent="." instance=ExtResource("8_jb4q0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5168, 25.0646, 39.3975)
+
+[node name="Hammer" parent="." instance=ExtResource("9_24vgu")]
+transform = Transform3D(0.29157, -0.956549, 4.18121e-08, 0, -4.37114e-08, -1, 0.956549, 0.29157, -1.27449e-08, 21.0656, 24.4184, 46.7688)
 
 [editable path="Door"]

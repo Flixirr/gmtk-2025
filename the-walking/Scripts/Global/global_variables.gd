@@ -5,3 +5,4 @@ extends Node
 @export var is_lamp_puzzle_complete = false
 signal lamp_puzzle_complete
 signal player_dialogue(dialogue)
+signal system_dialogue(dialogue)
