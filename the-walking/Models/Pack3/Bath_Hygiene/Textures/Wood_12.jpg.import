@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bu5gku71k0jpu"
-path.s3tc="res://.godot/imported/Wood_12.jpg-0874e8af1161973d0334ce64dc754333.s3tc.ctex"
+path.s3tc="res://.godot/imported/Wood_12.jpg-b75935cf203e37a39fda8433ec962c7c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/Pack3/Bath_Hygiene/textures/Wood_12.jpg"
-dest_files=["res://.godot/imported/Wood_12.jpg-0874e8af1161973d0334ce64dc754333.s3tc.ctex"]
+source_file="res://Models/Pack3/Bath_Hygiene/Textures/Wood_12.jpg"
+dest_files=["res://.godot/imported/Wood_12.jpg-b75935cf203e37a39fda8433ec962c7c.s3tc.ctex"]
 
 [params]
 

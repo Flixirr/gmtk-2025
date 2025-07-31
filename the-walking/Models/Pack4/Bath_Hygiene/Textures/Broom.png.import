@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5prua5kygwhm"
-path.s3tc="res://.godot/imported/Broom.png-8ce236709c04f263bfc749f5b700b00d.s3tc.ctex"
+path.s3tc="res://.godot/imported/Broom.png-64c0ad1b4e5b5b52adb7b79f3f14b4c9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/Pack4/Bath_Hygiene/textures/Broom.png"
-dest_files=["res://.godot/imported/Broom.png-8ce236709c04f263bfc749f5b700b00d.s3tc.ctex"]
+source_file="res://Models/Pack4/Bath_Hygiene/Textures/Broom.png"
+dest_files=["res://.godot/imported/Broom.png-64c0ad1b4e5b5b52adb7b79f3f14b4c9.s3tc.ctex"]
 
 [params]
 

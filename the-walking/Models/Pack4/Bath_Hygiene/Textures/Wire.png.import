@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bobyqfn8syll5"
-path.s3tc="res://.godot/imported/Wire.png-1efd7b2b82e7b4c83a86ec5343b83bfc.s3tc.ctex"
+path.s3tc="res://.godot/imported/Wire.png-a0ad3ad7ec702a2c325aa70890e45012.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/Pack4/Bath_Hygiene/textures/Wire.png"
-dest_files=["res://.godot/imported/Wire.png-1efd7b2b82e7b4c83a86ec5343b83bfc.s3tc.ctex"]
+source_file="res://Models/Pack4/Bath_Hygiene/Textures/Wire.png"
+dest_files=["res://.godot/imported/Wire.png-a0ad3ad7ec702a2c325aa70890e45012.s3tc.ctex"]
 
 [params]
 

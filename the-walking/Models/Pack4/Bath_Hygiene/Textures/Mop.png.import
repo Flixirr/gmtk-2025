@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://yckeekt78rmv"
-path.s3tc="res://.godot/imported/Mop.png-4fa9cdfde073b8db2d904b5297cd18af.s3tc.ctex"
+path.s3tc="res://.godot/imported/Mop.png-1952ca0cba31e21b176c5e2e51cbe714.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/Pack4/Bath_Hygiene/textures/Mop.png"
-dest_files=["res://.godot/imported/Mop.png-4fa9cdfde073b8db2d904b5297cd18af.s3tc.ctex"]
+source_file="res://Models/Pack4/Bath_Hygiene/Textures/Mop.png"
+dest_files=["res://.godot/imported/Mop.png-1952ca0cba31e21b176c5e2e51cbe714.s3tc.ctex"]
 
 [params]
 

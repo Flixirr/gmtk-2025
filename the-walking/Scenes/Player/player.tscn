@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddv2bijbuunr2"]
+[gd_scene load_steps=7 format=3 uid="uid://ddv2bijbuunr2"]
 
 [ext_resource type="Script" uid="uid://dn8nalqdom7xp" path="res://Scripts/Player/player.gd" id="1_uvnfx"]
+[ext_resource type="PackedScene" uid="uid://cjx3rc183ftcx" path="res://Scenes/Player/inventory_doll.tscn" id="2_a3d8c"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dncm7"]
 
@@ -31,6 +32,7 @@ shape = SubResource("ConvexPolygonShape3D_uvnfx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.776998, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CamRotate/Head"]
+current = true
 
 [node name="RayCast3D" type="RayCast3D" parent="CamRotate/Head"]
 target_position = Vector3(0, 0, -2)
@@ -61,14 +63,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 20.0
-offset_top = -11.0
-offset_right = 142.0
-offset_bottom = 12.0
+offset_left = 23.0
+offset_top = -33.0
+offset_right = 260.0
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 35
 text = "[F] Interact"
 
 [node name="DialogueText" type="RichTextLabel" parent="PlayerUI/Player"]
@@ -78,20 +81,118 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -419.0
-offset_top = -33.0
-offset_right = 485.0
-offset_bottom = -10.0
+offset_left = -451.0
+offset_top = -69.0
+offset_right = 453.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
+theme_override_font_sizes/bold_italics_font_size = 35
+theme_override_font_sizes/italics_font_size = 35
+theme_override_font_sizes/mono_font_size = 35
+theme_override_font_sizes/normal_font_size = 35
+theme_override_font_sizes/bold_font_size = 35
 bbcode_enabled = true
 text = "[b][color=blue]Player:[/color][/b] This is a test dialogue"
 horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="PlayerUI/Player"]
 wait_time = 3.0
+
+[node name="InventoryView" type="SubViewportContainer" parent="PlayerUI"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="PlayerUI/InventoryView"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 0
+
+[node name="Camera3D" type="Camera3D" parent="PlayerUI/InventoryView/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17, 0)
+cull_mask = 2
+far = 4.25
+
+[node name="InventoryItems" type="Node3D" parent="PlayerUI/InventoryView/SubViewport/Camera3D"]
+
+[node name="InventoryDoll" parent="PlayerUI/InventoryView/SubViewport/Camera3D/InventoryItems" instance=ExtResource("2_a3d8c")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="PlayerUI/InventoryView/SubViewport/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0708771)
+layers = 2
+
+[node name="InventoryUI" type="Control" parent="PlayerUI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TopColor" type="ColorRect" parent="PlayerUI/InventoryUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.1
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BottomColor" type="ColorRect" parent="PlayerUI/InventoryUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.9
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TitleText" type="Label" parent="PlayerUI/InventoryUI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.0
+offset_top = 9.0
+offset_right = 62.0
+offset_bottom = 72.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 35
+text = "PIZZA"
+horizontal_alignment = 1
+
+[node name="Hints" type="RichTextLabel" parent="PlayerUI/InventoryUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -452.0
+offset_top = -60.0
+offset_right = 452.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[F/TAB] Exit inventory [E] Use item"
+horizontal_alignment = 1
 
 [node name="Note" type="Control" parent="PlayerUI"]
 visible = false

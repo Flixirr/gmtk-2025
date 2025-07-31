@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hwrptvceok64"
-path.s3tc="res://.godot/imported/Dirty _clothes.jpg-e480d675119762932c994b9185150904.s3tc.ctex"
+path.s3tc="res://.godot/imported/Dirty _clothes.jpg-d4a1311200481ca0d82a883ff60aba54.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/Pack4/Bath_Hygiene/textures/Dirty _clothes.jpg"
-dest_files=["res://.godot/imported/Dirty _clothes.jpg-e480d675119762932c994b9185150904.s3tc.ctex"]
+source_file="res://Models/Pack4/Bath_Hygiene/Textures/Dirty _clothes.jpg"
+dest_files=["res://.godot/imported/Dirty _clothes.jpg-d4a1311200481ca0d82a883ff60aba54.s3tc.ctex"]
 
 [params]
 

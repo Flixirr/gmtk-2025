@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8vp4j6h4q181"
-path.s3tc="res://.godot/imported/Metal_02.jpg-2764651b1f96e16f227db5da4a5dc287.s3tc.ctex"
+path.s3tc="res://.godot/imported/Metal_02.jpg-088460e27a5050bd1d33338378e18569.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/Pack3/Bath_Hygiene/textures/Metal_02.jpg"
-dest_files=["res://.godot/imported/Metal_02.jpg-2764651b1f96e16f227db5da4a5dc287.s3tc.ctex"]
+source_file="res://Models/Pack3/Bath_Hygiene/Textures/Metal_02.jpg"
+dest_files=["res://.godot/imported/Metal_02.jpg-088460e27a5050bd1d33338378e18569.s3tc.ctex"]
 
 [params]
 

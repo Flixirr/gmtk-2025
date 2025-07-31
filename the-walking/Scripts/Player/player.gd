@@ -21,6 +21,9 @@ const JUMP_VELOCITY = 3.0
 @onready var note_ui = $PlayerUI/Note
 @onready var note_text = $PlayerUI/Note/RichTextLabel
 
+@onready var inventory_ui = $PlayerUI/InventoryUI
+@onready var inventory_cam = $PlayerUI/InventoryView
+
 func _ready() -> void:
 	hint_text.visible = false
 	dialogue_text.text = ""
@@ -30,6 +33,23 @@ func _ready() -> void:
 	
 
 func _unhandled_input(event: InputEvent) -> void:
+	# handle focus
+	if event.is_action_pressed("Inventory"):
+		if is_in_focus and note_ui.visible:
+			player_ui.visible = false
+			note_ui.visible = false
+			_toggle_inventory_visibility(true)
+		elif is_in_focus:
+			is_in_focus = false
+			player_ui.visible = true
+			note_ui.visible = false
+			_toggle_inventory_visibility(false)
+		else:
+			is_in_focus = true
+			player_ui.visible = false
+			note_ui.visible = false
+			_toggle_inventory_visibility(true)
+	
 	if is_in_focus:
 		return
 	if event is InputEventMouseMotion:
@@ -46,6 +66,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click"):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 
 # head bob
 var t_bob = 0.0
@@ -104,6 +125,7 @@ func _handle_raycast():
 			is_in_focus = false
 			player_ui.visible = true
 			note_ui.visible = false
+			_toggle_inventory_visibility(false)
 		elif raycast_hit is Door:
 			raycast_hit.handle_door_open()
 		elif raycast_hit is Note:
@@ -122,3 +144,7 @@ func _on_dialogue_received(dialogue_txt):
 
 func _on_timer_timeout() -> void:
 	dialogue_text.text = ""
+
+func _toggle_inventory_visibility(visibility):
+	inventory_cam.visible = visibility
+	inventory_ui.visible = visibility

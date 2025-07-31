@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvpgopwbxtr7u"
-path.s3tc="res://.godot/imported/Plastic_11.jpg-343a4a9a482bc8d721a32108c939a664.s3tc.ctex"
+path.s3tc="res://.godot/imported/Plastic_11.jpg-4aef5516b1e8f9c1be4b3eb34992d0e6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/Pack4/Bath_Hygiene/textures/Plastic_11.jpg"
-dest_files=["res://.godot/imported/Plastic_11.jpg-343a4a9a482bc8d721a32108c939a664.s3tc.ctex"]
+source_file="res://Models/Pack4/Bath_Hygiene/Textures/Plastic_11.jpg"
+dest_files=["res://.godot/imported/Plastic_11.jpg-4aef5516b1e8f9c1be4b3eb34992d0e6.s3tc.ctex"]
 
 [params]
 
