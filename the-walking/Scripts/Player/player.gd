@@ -43,6 +43,7 @@ func _ready() -> void:
 	note_text.text = ""
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	GlobalVariables.player_dialogue.connect(_on_dialogue_received)
+	GlobalVariables.system_dialogue.connect(_on_system_dialogue_received)
 	
 
 func rotate_cam(angles):
@@ -177,7 +178,12 @@ func _handle_raycast():
 
 func _on_dialogue_received(dialogue_txt):
 	$PlayerUI/Player/Timer.stop()
-	dialogue_text.text = "[b][color=blue]Player:[/color][/b] %s" % dialogue_txt
+	dialogue_text.text = "[b][color=red]Player:[/color][/b] %s" % dialogue_txt
+	$PlayerUI/Player/Timer.start(3)
+
+func _on_system_dialogue_received(dialogue_txt):
+	$PlayerUI/Player/Timer.stop()
+	dialogue_text.text = "[b][color=blue]System:[/color][/b] %s" % dialogue_txt
 	$PlayerUI/Player/Timer.start(3)
 
 func _on_timer_timeout() -> void:

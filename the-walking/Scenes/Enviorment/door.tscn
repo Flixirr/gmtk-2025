@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bk23d6oku4tym"]
+[gd_scene load_steps=11 format=4 uid="uid://bk23d6oku4tym"]
 
 [ext_resource type="Script" uid="uid://gx4va0ay3tn6" path="res://Scripts/Enviorment/door.gd" id="1_c1k58"]
 [ext_resource type="Texture2D" uid="uid://blf8hs11lrk14" path="res://Models/Pack/Door_01.jpg" id="2_njx4n"]
@@ -80,6 +80,9 @@ _data = {
 &"door_open": SubResource("Animation_ba8gm")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_c1k58"]
+size = Vector3(1.40967, 1.8374, 4)
+
 [node name="Door" type="Node3D"]
 
 [node name="Door1" type="StaticBody3D" parent="."]
@@ -98,3 +101,12 @@ shape = SubResource("ConvexPolygonShape3D_c1k58")
 libraries = {
 &"": SubResource("AnimationLibrary_0phs7")
 }
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75162, 0, -0.562474)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.204834, -0.418701, -0.041626)
+shape = SubResource("BoxShape3D_c1k58")
+
+[connection signal="body_entered" from="Area3D" to="Door1" method="_on_area_3d_body_entered"]

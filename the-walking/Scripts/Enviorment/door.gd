@@ -3,22 +3,34 @@ class_name Door
 
 @onready var animation_player: AnimationPlayer = $"../AnimationPlayer"
 @export var is_open: bool = false
+var entrance_sealed = false
 
-enum puzzle_door_type {NO_PUZZLE, LAMP_PUZZLE}
+enum puzzle_door_type {NO_PUZZLE, LAMP_PUZZLE, ENTRANCE, RADIO_PICKUP}
 @export var door_puzzle : puzzle_door_type = puzzle_door_type.NO_PUZZLE
 
 func _ready() -> void:
 	if door_puzzle == puzzle_door_type.LAMP_PUZZLE:
 		GlobalVariables.lamp_puzzle_complete.connect(_door_open)
+	elif door_puzzle == puzzle_door_type.RADIO_PICKUP:
+		GlobalVariables.radio_pickup.connect(_door_open)
 
 func handle_door_open():
 	if door_puzzle == puzzle_door_type.NO_PUZZLE:
-		if is_open:
-			_door_close()
+		_toggle_open()
+	elif door_puzzle == puzzle_door_type.ENTRANCE:
+		if entrance_sealed:
+			GlobalVariables.player_dialogue.emit("These won't open.")
 		else:
-			_door_open()
+			_toggle_open()
 	else:
-		GlobalVariables.player_dialogue.emit("Too heavy to move")
+		GlobalVariables.player_dialogue.emit("Too heavy to move.")
+
+
+func _toggle_open():
+	if is_open:
+		_door_close()
+	else:
+		_door_open()
 
 func _door_open():
 	animation_player.play("door_open")
@@ -27,3 +39,9 @@ func _door_open():
 func _door_close():
 	animation_player.play_backwards("door_open")
 	is_open = false
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body is Player and door_puzzle == puzzle_door_type.ENTRANCE:
+		self.rotation.y = 0.0
+		entrance_sealed = true
