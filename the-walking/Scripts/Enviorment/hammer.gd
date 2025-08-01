@@ -1,5 +1,5 @@
 extends Pickup
-class_name Hammer
+class_name GenericItem
 
 func pickup():
 	queue_free()

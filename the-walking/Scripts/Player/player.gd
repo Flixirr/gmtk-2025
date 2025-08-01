@@ -112,8 +112,8 @@ func _unhandled_input(event: InputEvent) -> void:
 				item_name.text = in_inventory[item_selected].item_name
 				in_inventory[item_selected].visible = true
 			elif event.is_action_pressed("UseItem") and item_selected < in_inventory.size() and item_selected >= 0:
-				print("Used %s on" % in_inventory[item_selected].item_name)
-				print(raycast_hit)
+				if raycast_hit is RequireItem:
+					raycast_hit.item_interaction(in_inventory[item_selected].item_name)
 				is_in_focus = false
 				player_ui.visible = true
 				note_ui.visible = false
@@ -190,6 +190,9 @@ func _handle_raycast():
 	elif raycast_hit is Pickup:
 		hint_text.text = "[F] Pickup"
 		hint_text.visible = true
+	elif raycast_hit is RequireItem:
+		hint_text.text = "[Tab] Use Item"
+		hint_text.visible = true
 	else:
 		hint_text.visible = false
 
@@ -211,7 +214,7 @@ func _handle_raycast():
 		elif raycast_hit is Radio:
 			raycast_hit.pickup()
 			_append_to_inventory(raycast_hit.inventory_item)
-		elif raycast_hit is Hammer:
+		elif raycast_hit is GenericItem:
 			raycast_hit.pickup()
 			_append_to_inventory(raycast_hit.inventory_item)
 

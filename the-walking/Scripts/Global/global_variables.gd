@@ -1,7 +1,7 @@
 extends Node
 
 @export var mouse_sensitivity = 0.0001
-
+@export var bodies_burned = 0
 @export var is_lamp_puzzle_complete = false
 
 enum item_name {RADIO, HAMMER, GAS, LIGHTER}

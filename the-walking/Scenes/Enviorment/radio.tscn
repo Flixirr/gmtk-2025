@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c6l7r5ouyhxrg" path="res://Scripts/Enviorment/radio.gd" id="1_lrbga"]
 [ext_resource type="Texture2D" uid="uid://ch38cuhga1ncy" path="res://Models/Pack2/Objects_Interior(Village)_Alpha/Textures/Radio_01.png" id="2_bwr08"]
 [ext_resource type="PackedScene" uid="uid://cjx3rc183ftcx" path="res://Scenes/Player/inventory_radio.tscn" id="2_lgygd"]
-[ext_resource type="AudioStream" uid="uid://b782p33oijahc" path="res://Audio/Music/wheelchair horror ost(1).mp3" id="3_lgygd"]
+[ext_resource type="AudioStream" uid="uid://diyjcip2hogyi" path="res://Audio/Music/wheelchair horror ost[radio].mp3" id="4_bwr08"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p5gvt"]
 resource_name = "Radio_01"
@@ -60,7 +60,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00378418, 0.0105896, 0.000
 shape = SubResource("BoxShape3D_oy1bq")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_lgygd")
+stream = ExtResource("4_bwr08")
 volume_db = 10.0
 autoplay = true
 max_distance = 11.0

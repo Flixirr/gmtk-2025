@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://gx4va0ay3tn6" path="res://Scripts/Enviorment/door.gd" id="1_c1k58"]
 [ext_resource type="Texture2D" uid="uid://blf8hs11lrk14" path="res://Models/Pack/Door_01.jpg" id="2_njx4n"]
-[ext_resource type="AudioStream" uid="uid://b7x54n7ok7vw6" path="res://Audio/SFX/Enviro/Door_open.mp3" id="3_h8gvv"]
-[ext_resource type="AudioStream" uid="uid://blt2gjtldrh7p" path="res://Audio/SFX/Enviro/Door_close.mp3" id="4_3ebi3"]
+[ext_resource type="AudioStream" uid="uid://dn5fe4ilxw7mw" path="res://Audio/SFX/Enviro/Door_open.mp3" id="3_h8gvv"]
+[ext_resource type="AudioStream" uid="uid://cwm0t4ics2vf1" path="res://Audio/SFX/Enviro/Door_close.mp3" id="4_3ebi3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hh1p5"]
 resource_name = "Door_01"
