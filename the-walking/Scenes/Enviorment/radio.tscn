@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://bihonq1jcroaw"]
+[gd_scene load_steps=10 format=4 uid="uid://bihonq1jcroaw"]
 
 [ext_resource type="Script" uid="uid://c6l7r5ouyhxrg" path="res://Scripts/Enviorment/radio.gd" id="1_lrbga"]
 [ext_resource type="Texture2D" uid="uid://ch38cuhga1ncy" path="res://Models/Pack2/Objects_Interior(Village)_Alpha/Textures/Radio_01.png" id="2_bwr08"]
 [ext_resource type="PackedScene" uid="uid://cjx3rc183ftcx" path="res://Scenes/Player/inventory_radio.tscn" id="2_lgygd"]
 [ext_resource type="AudioStream" uid="uid://diyjcip2hogyi" path="res://Audio/Music/wheelchair horror ost[radio].mp3" id="4_bwr08"]
+[ext_resource type="AudioStream" uid="uid://cwm0t4ics2vf1" path="res://Audio/SFX/Enviro/Door_close.mp3" id="5_lgygd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p5gvt"]
 resource_name = "Radio_01"
@@ -66,3 +67,6 @@ autoplay = true
 max_distance = 11.0
 bus = &"Music"
 parameters/looping = true
+
+[node name="ObjectPickup" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_lgygd")

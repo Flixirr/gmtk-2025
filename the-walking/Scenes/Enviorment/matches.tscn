@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://oqbpiw2rcmq8"]
+[gd_scene load_steps=9 format=4 uid="uid://oqbpiw2rcmq8"]
 
 [ext_resource type="Script" uid="uid://dq67bfw01xikl" path="res://Scripts/Enviorment/hammer.gd" id="1_c8aln"]
 [ext_resource type="Texture2D" uid="uid://dhp4x6a2bhjjn" path="res://Models/survival/Textures/match.png" id="1_idvgw"]
 [ext_resource type="PackedScene" uid="uid://8dnimhifceec" path="res://Scenes/Player/inventory_matches.tscn" id="2_86ur3"]
+[ext_resource type="AudioStream" uid="uid://cwm0t4ics2vf1" path="res://Audio/SFX/Enviro/Door_close.mp3" id="4_v35s7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_38y3k"]
 resource_name = "match"
@@ -57,3 +58,6 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0114746, 0.0018921, -0.00947571)
 shape = SubResource("BoxShape3D_5ba7r")
+
+[node name="ObjectPickup" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_v35s7")

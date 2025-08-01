@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://bc7ho6wepf3rn"]
+[gd_scene load_steps=9 format=4 uid="uid://bc7ho6wepf3rn"]
 
 [ext_resource type="Script" uid="uid://dq67bfw01xikl" path="res://Scripts/Enviorment/hammer.gd" id="1_8xxov"]
 [ext_resource type="Texture2D" uid="uid://b50ajkrkitoq2" path="res://Models/Tools/textures/ClawHammer.png" id="2_87qwx"]
 [ext_resource type="PackedScene" uid="uid://co5gc8606xy6v" path="res://Scenes/Player/inventory_hammer.tscn" id="2_wt4dg"]
+[ext_resource type="AudioStream" uid="uid://cwm0t4ics2vf1" path="res://Audio/SFX/Enviro/Door_close.mp3" id="4_wt4dg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8r4xb"]
 resource_name = "ClawHammer"
@@ -62,3 +63,6 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0128479, 0.00476074, -0.00830078)
 shape = SubResource("BoxShape3D_uf45e")
+
+[node name="ObjectPickup" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_wt4dg")
