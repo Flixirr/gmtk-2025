@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=4 uid="uid://cjx3rc183ftcx"]
 
-[ext_resource type="Script" uid="uid://dttk0iqu40hjt" path="res://Scripts/Player/ItemView.gd" id="1_lqguc"]
-[ext_resource type="Texture2D" uid="uid://ch38cuhga1ncy" path="res://Models/Pack2/Objects_Interior(Village)_Alpha/Textures/Radio_01.png" id="2_lqguc"]
+[ext_resource type="Script" uid="uid://dttk0iqu40hjt" path="res://Scripts/Player/ItemView.gd" id="1_cco2p"]
+[ext_resource type="Texture2D" uid="uid://ch38cuhga1ncy" path="res://Models/Pack2/Objects_Interior(Village)_Alpha/Textures/Radio_01.png" id="2_fyjxk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p5gvt"]
 resource_name = "Radio_01"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_lqguc")
+albedo_texture = ExtResource("2_fyjxk")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_iflqt"]
@@ -80,7 +80,8 @@ _data = {
 }
 
 [node name="InventoryDoll" type="Node3D"]
-script = ExtResource("1_lqguc")
+script = ExtResource("1_cco2p")
+item_name = "Radio"
 
 [node name="Radio_01" type="MeshInstance3D" parent="."]
 transform = Transform3D(-39.5679, 0.000100312, 3.63128e-10, 0, -0.000143235, 39.5679, 0.000100312, 39.5679, 0.000143235, 0, 0, -1)

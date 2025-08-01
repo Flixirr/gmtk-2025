@@ -1,8 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://ddv2bijbuunr2"]
+[gd_scene load_steps=12 format=3 uid="uid://ddv2bijbuunr2"]
 
 [ext_resource type="Script" uid="uid://dn8nalqdom7xp" path="res://Scripts/Player/player.gd" id="1_uvnfx"]
-[ext_resource type="PackedScene" uid="uid://cjx3rc183ftcx" path="res://Scenes/Player/inventory_doll.tscn" id="2_a3d8c"]
-[ext_resource type="PackedScene" uid="uid://co5gc8606xy6v" path="res://Scenes/Player/inventory_hammer.tscn" id="2_xpcdj"]
 [ext_resource type="AudioStream" uid="uid://b6d4i8txwim1v" path="res://Audio/SFX/Player/Footstep1.mp3" id="4_0u5uq"]
 [ext_resource type="AudioStream" uid="uid://bc0omscgt26rr" path="res://Audio/SFX/Player/Footstep2.mp3" id="5_jlvik"]
 [ext_resource type="AudioStream" uid="uid://2o4yifqadfow" path="res://Audio/SFX/Player/Footstep3.mp3" id="6_gk6dx"]
@@ -19,6 +17,9 @@ stream_0/stream = ExtResource("4_0u5uq")
 stream_1/stream = ExtResource("5_jlvik")
 stream_2/stream = ExtResource("6_gk6dx")
 stream_3/stream = ExtResource("7_jhyir")
+
+[sub_resource type="Animation" id="Animation_06tpx"]
+length = 0.001
 
 [sub_resource type="Animation" id="Animation_oikmp"]
 resource_name = "footstep"
@@ -37,9 +38,6 @@ tracks/0/keys = {
 "method": &"_play_footstep_audio"
 }]
 }
-
-[sub_resource type="Animation" id="Animation_06tpx"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7g0yx"]
 _data = {
@@ -163,11 +161,6 @@ far = 4.25
 
 [node name="InventoryItems" type="Node3D" parent="PlayerUI/InventoryView/SubViewport/Camera3D"]
 
-[node name="InventoryDoll" parent="PlayerUI/InventoryView/SubViewport/Camera3D/InventoryItems" instance=ExtResource("2_a3d8c")]
-
-[node name="InventoryHammer" parent="PlayerUI/InventoryView/SubViewport/Camera3D/InventoryItems" instance=ExtResource("2_xpcdj")]
-visible = false
-
 [node name="OmniLight3D" type="OmniLight3D" parent="PlayerUI/InventoryView/SubViewport/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0708771)
 layers = 2
@@ -214,7 +207,6 @@ grow_horizontal = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 35
-text = "RADIO"
 horizontal_alignment = 1
 
 [node name="Hints" type="RichTextLabel" parent="PlayerUI/InventoryUI"]

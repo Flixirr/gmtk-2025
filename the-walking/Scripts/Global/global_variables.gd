@@ -3,6 +3,8 @@ extends Node
 @export var mouse_sensitivity = 0.005
 
 @export var is_lamp_puzzle_complete = false
+
+enum item_name {RADIO, HAMMER, GAS, LIGHTER}
 signal lamp_puzzle_complete
 
 signal radio_pickup

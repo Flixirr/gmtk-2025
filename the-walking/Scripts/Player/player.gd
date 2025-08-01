@@ -26,14 +26,10 @@ const JUMP_VELOCITY = 3.0
 
 
 # Inventory
-enum ITEMS {RADIO, HAMMER}
-var currently_selected : ITEMS = ITEMS.RADIO
+var in_inventory : Array[InventoryItem] = []
+var item_selected = 0
 
-var has_radio = false
-var has_hammer = false
-
-@onready var radio_item = $PlayerUI/InventoryView/SubViewport/Camera3D/InventoryItems/InventoryDoll
-@onready var hammer_item = $PlayerUI/InventoryView/SubViewport/Camera3D/InventoryItems/InventoryHammer
+@onready var inventory_items = $PlayerUI/InventoryView/SubViewport/Camera3D/InventoryItems
 
 @onready var item_name = $PlayerUI/InventoryUI/TitleText
 
@@ -52,6 +48,20 @@ func _ready() -> void:
 
 func rotate_cam(angles):
 	cam_rotate.rotate_y(angles)
+
+
+func _get_inventory_items():
+	item_selected = 0
+	in_inventory = []
+	for item in inventory_items.get_children():
+		if item is InventoryItem:
+			in_inventory.append(item)
+			item.visible = false
+	
+	if item_selected < in_inventory.size():
+		item_name.text = in_inventory[item_selected].item_name
+		in_inventory[item_selected].visible = true
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	# handle focus
@@ -73,16 +83,23 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if is_in_focus:
 		if inventory_ui.visible:
-			if event.is_action_pressed("WalkRight") and has_hammer:
-				item_name.text = "HAMMER"
-				hammer_item.visible = true
-				radio_item.visible = false
-			elif event.is_action_pressed("WalkLeft") and has_radio:
-				item_name.text = "RADIO"
-				radio_item.visible = true
-				hammer_item.visible = false
-			elif event.is_action_pressed("UseItem"):
-				pass
+			if event.is_action_pressed("WalkRight") and item_selected + 1 < in_inventory.size():
+				in_inventory[item_selected].visible = false
+				item_selected += 1
+				item_name.text = in_inventory[item_selected].item_name
+				in_inventory[item_selected].visible = true
+			elif event.is_action_pressed("WalkLeft") and item_selected - 1 >= 0:
+				in_inventory[item_selected].visible = false
+				item_selected -= 1
+				item_name.text = in_inventory[item_selected].item_name
+				in_inventory[item_selected].visible = true
+			elif event.is_action_pressed("UseItem") and item_selected < in_inventory.size() and item_selected >= 0:
+				print("Used %s on" % in_inventory[item_selected].item_name)
+				print(raycast_hit)
+				is_in_focus = false
+				player_ui.visible = true
+				note_ui.visible = false
+				_toggle_inventory_visibility(false)
 		return
 	
 	if event is InputEventMouseMotion:
@@ -180,11 +197,17 @@ func _handle_raycast():
 		elif raycast_hit is Lamp:
 			raycast_hit.handle_toggle()
 		elif raycast_hit is Radio:
-			has_radio = true
 			raycast_hit.pickup()
+			_append_to_inventory(raycast_hit.inventory_item)
 		elif raycast_hit is Hammer:
-			has_hammer = true
 			raycast_hit.pickup()
+			_append_to_inventory(raycast_hit.inventory_item)
+
+
+func _append_to_inventory(inventory_item):
+	var instance = inventory_item.instantiate()
+	inventory_items.add_child(instance)
+	instance.visible = false
 
 
 func _on_dialogue_received(dialogue_txt):
@@ -201,17 +224,6 @@ func _on_timer_timeout() -> void:
 	dialogue_text.text = ""
 
 func _toggle_inventory_visibility(visibility):
-	if has_radio:
-		item_name.text = "RADIO"
-		radio_item.visible = true
-		hammer_item.visible = false
-	elif has_hammer:
-		item_name.text = "HAMMER"
-		hammer_item.visible = true
-		radio_item.visible = false
-	else:
-		item_name.text = ""
-		hammer_item.visible = false
-		radio_item.visible = false
+	_get_inventory_items()
 	inventory_cam.visible = visibility
 	inventory_ui.visible = visibility
