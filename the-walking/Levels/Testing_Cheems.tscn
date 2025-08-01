@@ -20,6 +20,7 @@ fog_depth_begin = 0.0
 fog_depth_end = 15.0
 
 [node name="TestingCheems" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011795, -0.0262127, -0.00251007)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.64357, 0)
@@ -28,7 +29,7 @@ size = Vector3(29, 0.205566, 35)
 material = ExtResource("1_2y0bb")
 
 [node name="Player" parent="." instance=ExtResource("1_nul47")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.307, 24.8307, 28.7172)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.8968, 27.2452, 18.1939)
 
 [node name="Note" parent="." instance=ExtResource("3_mhdjh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.808591, 0)

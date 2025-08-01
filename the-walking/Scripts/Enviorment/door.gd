@@ -37,11 +37,22 @@ func _door_open():
 	is_open = true
 
 func _door_close():
-	animation_player.play_backwards("door_open")
+	animation_player.play("door_close")
 	is_open = false
 
 
+# audio streams
+@onready var open_sound = $"../door_open"
+@onready var close_sound = $"../door_close"
+
+func _play_open_sound():
+	open_sound.play()
+
+func _play_close_sound():
+	close_sound.play()
+
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is Player and door_puzzle == puzzle_door_type.ENTRANCE:
+		animation_player.stop()
 		self.rotation.y = 0.0
 		entrance_sealed = true

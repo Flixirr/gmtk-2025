@@ -37,6 +37,10 @@ var has_hammer = false
 
 @onready var item_name = $PlayerUI/InventoryUI/TitleText
 
+# audio
+@onready var anim_audio = $Audio/AnimationPlayer
+@onready var audio_player = $Audio/AudioStreamPlayer3D
+
 func _ready() -> void:
 	hint_text.visible = false
 	dialogue_text.text = ""
@@ -118,6 +122,10 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("WalkLeft", "WalkRight", "WalkFwd", "WalkBack")
 	var direction = (cam_rotate.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
+	if direction != Vector3():
+		if is_on_floor():
+			anim_audio.play("footstep")
+	
 	if direction:
 		velocity.x = (direction.x * SPEED)
 		velocity.z = (direction.z * SPEED)
@@ -132,6 +140,9 @@ func _physics_process(delta: float) -> void:
 	
 	
 	move_and_slide()
+
+func _play_footstep_audio():
+	audio_player.play()
 
 func _headbob(time):
 	var pos = Vector3.ZERO

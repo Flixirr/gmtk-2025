@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=4 uid="uid://bk23d6oku4tym"]
+[gd_scene load_steps=14 format=4 uid="uid://bk23d6oku4tym"]
 
 [ext_resource type="Script" uid="uid://gx4va0ay3tn6" path="res://Scripts/Enviorment/door.gd" id="1_c1k58"]
 [ext_resource type="Texture2D" uid="uid://blf8hs11lrk14" path="res://Models/Pack/Door_01.jpg" id="2_njx4n"]
+[ext_resource type="AudioStream" uid="uid://dn5fe4ilxw7mw" path="res://Audio/SFX/Enviro/Door_open.mp3" id="3_h8gvv"]
+[ext_resource type="AudioStream" uid="uid://cwm0t4ics2vf1" path="res://Audio/SFX/Enviro/Door_close.mp3" id="4_3ebi3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hh1p5"]
 resource_name = "Door_01"
@@ -73,10 +75,54 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_play_open_sound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_5uvyj"]
+resource_name = "door_close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_play_close_sound"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0phs7"]
 _data = {
 &"RESET": SubResource("Animation_v6xrn"),
+&"door_close": SubResource("Animation_5uvyj"),
 &"door_open": SubResource("Animation_ba8gm")
 }
 
@@ -108,5 +154,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75162, 0, -0.562474)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.204834, -0.418701, -0.041626)
 shape = SubResource("BoxShape3D_c1k58")
+
+[node name="door_open" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_h8gvv")
+volume_db = -15.0
+max_db = 0.805
+bus = &"SFX"
+
+[node name="door_close" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_3ebi3")
+volume_db = 25.756
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area3D" to="Door1" method="_on_area_3d_body_entered"]
