@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcusaapcal5aa"]
+
+[ext_resource type="Script" uid="uid://c2vrdfbk8j8mh" path="res://Scripts/Interactions/plank.gd" id="1_2lf4v"]
+[ext_resource type="AudioStream" uid="uid://dn5fe4ilxw7mw" path="res://Audio/SFX/Enviro/Door_open.mp3" id="2_kysvl"]
+[ext_resource type="Texture2D" uid="uid://dwder0oxjne0u" path="res://Models/Pack/Wood_12.jpg" id="3_5l771"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hk32g"]
+albedo_texture = ExtResource("3_5l771")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_groci"]
+material = SubResource("StandardMaterial3D_hk32g")
+size = Vector3(1.7, 0.2, 0.02)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hk32g"]
+data = PackedVector3Array(-0.85, 0.1, 0.01, 0.85, 0.1, 0.01, -0.85, -0.1, 0.01, 0.85, 0.1, 0.01, 0.85, -0.1, 0.01, -0.85, -0.1, 0.01, 0.85, 0.1, -0.01, -0.85, 0.1, -0.01, 0.85, -0.1, -0.01, -0.85, 0.1, -0.01, -0.85, -0.1, -0.01, 0.85, -0.1, -0.01, 0.85, 0.1, 0.01, 0.85, 0.1, -0.01, 0.85, -0.1, 0.01, 0.85, 0.1, -0.01, 0.85, -0.1, -0.01, 0.85, -0.1, 0.01, -0.85, 0.1, -0.01, -0.85, 0.1, 0.01, -0.85, -0.1, -0.01, -0.85, 0.1, 0.01, -0.85, -0.1, 0.01, -0.85, -0.1, -0.01, 0.85, 0.1, 0.01, -0.85, 0.1, 0.01, 0.85, 0.1, -0.01, -0.85, 0.1, 0.01, -0.85, 0.1, -0.01, 0.85, 0.1, -0.01, -0.85, -0.1, 0.01, 0.85, -0.1, 0.01, -0.85, -0.1, -0.01, 0.85, -0.1, 0.01, 0.85, -0.1, -0.01, -0.85, -0.1, -0.01)
+
+[node name="WoodPlank" type="StaticBody3D"]
+script = ExtResource("1_2lf4v")
+
+[node name="HammerHit" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_kysvl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_groci")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConcavePolygonShape3D_hk32g")
