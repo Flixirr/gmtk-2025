@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://b2c0j0823j13o"]
+[gd_scene load_steps=33 format=4 uid="uid://b2c0j0823j13o"]
 
 [ext_resource type="Material" uid="uid://cr8s6dguk66lx" path="res://Materials/Bathroom_TiLES.tres" id="1_2y0bb"]
 [ext_resource type="PackedScene" uid="uid://ddv2bijbuunr2" path="res://Scenes/Player/player.tscn" id="1_nul47"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://dih7tbafixpnf" path="res://Audio/SFX/Enviro/Fire.mp3" id="15_7v2fn"]
 [ext_resource type="AudioStream" uid="uid://dn5fe4ilxw7mw" path="res://Audio/SFX/Enviro/Door_open.mp3" id="15_o3ehr"]
 [ext_resource type="Texture2D" uid="uid://dwder0oxjne0u" path="res://Models/Pack/Wood_12.jpg" id="17_g6h5i"]
+[ext_resource type="PackedScene" uid="uid://dcusaapcal5aa" path="res://Scenes/Enviorment/wood_plank.tscn" id="17_groci"]
 [ext_resource type="Script" uid="uid://c2vrdfbk8j8mh" path="res://Scripts/Interactions/plank.gd" id="17_hk32g"]
 
 [sub_resource type="Environment" id="Environment_dc5qw"]
@@ -453,18 +454,8 @@ draw_order = 3
 process_material = SubResource("ParticleProcessMaterial_hk32g")
 draw_pass_1 = SubResource("QuadMesh_rq5oc")
 
-[node name="WoodPlank" type="StaticBody3D" parent="."]
+[node name="WoodPlank" parent="." instance=ExtResource("17_groci")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5371, 25.5725, 41.3241)
-script = ExtResource("17_hk32g")
-
-[node name="HammerHit" type="AudioStreamPlayer3D" parent="WoodPlank"]
-stream = ExtResource("15_o3ehr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="WoodPlank"]
-mesh = SubResource("BoxMesh_groci")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WoodPlank"]
-shape = SubResource("ConcavePolygonShape3D_hk32g")
 
 [node name="WoodPlank2" type="StaticBody3D" parent="."]
 transform = Transform3D(0.863484, -0.504377, 0, 0.504377, 0.863484, 0, 0, 0, 1, 14.6294, 24.5725, 41.3241)
