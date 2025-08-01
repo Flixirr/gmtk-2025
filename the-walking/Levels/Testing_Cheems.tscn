@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://b2c0j0823j13o"]
+[gd_scene load_steps=36 format=4 uid="uid://b2c0j0823j13o"]
 
 [ext_resource type="Material" uid="uid://cr8s6dguk66lx" path="res://Materials/Bathroom_TiLES.tres" id="1_2y0bb"]
 [ext_resource type="PackedScene" uid="uid://ddv2bijbuunr2" path="res://Scenes/Player/player.tscn" id="1_nul47"]
@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://dwder0oxjne0u" path="res://Models/Pack/Wood_12.jpg" id="17_g6h5i"]
 [ext_resource type="PackedScene" uid="uid://dcusaapcal5aa" path="res://Scenes/Enviorment/wood_plank.tscn" id="17_groci"]
 [ext_resource type="Script" uid="uid://c2vrdfbk8j8mh" path="res://Scripts/Interactions/plank.gd" id="17_hk32g"]
+[ext_resource type="Script" uid="uid://dv0kh5f77j3gd" path="res://Scripts/Enviorment/shower.gd" id="20_rq5oc"]
+[ext_resource type="AudioStream" uid="uid://r8whdykbokym" path="res://Audio/SFX/Enviro/Shower.mp3" id="21_dn7h7"]
 
 [sub_resource type="Environment" id="Environment_dc5qw"]
 ssao_enabled = true
@@ -166,6 +168,9 @@ size = Vector3(1.7, 0.2, 0.02)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hk32g"]
 data = PackedVector3Array(-0.85, 0.1, 0.01, 0.85, 0.1, 0.01, -0.85, -0.1, 0.01, 0.85, 0.1, 0.01, 0.85, -0.1, 0.01, -0.85, -0.1, 0.01, 0.85, 0.1, -0.01, -0.85, 0.1, -0.01, 0.85, -0.1, -0.01, -0.85, 0.1, -0.01, -0.85, -0.1, -0.01, 0.85, -0.1, -0.01, 0.85, 0.1, 0.01, 0.85, 0.1, -0.01, 0.85, -0.1, 0.01, 0.85, 0.1, -0.01, 0.85, -0.1, -0.01, 0.85, -0.1, 0.01, -0.85, 0.1, -0.01, -0.85, 0.1, 0.01, -0.85, -0.1, -0.01, -0.85, 0.1, 0.01, -0.85, -0.1, 0.01, -0.85, -0.1, -0.01, 0.85, 0.1, 0.01, -0.85, 0.1, 0.01, 0.85, 0.1, -0.01, -0.85, 0.1, 0.01, -0.85, 0.1, -0.01, 0.85, 0.1, -0.01, -0.85, -0.1, 0.01, 0.85, -0.1, 0.01, -0.85, -0.1, -0.01, 0.85, -0.1, 0.01, 0.85, -0.1, -0.01, -0.85, -0.1, -0.01)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dn7h7"]
+size = Vector3(4.4549, 1.77344, 2.29083)
 
 [node name="TestingCheems" type="Node3D"]
 
@@ -469,6 +474,23 @@ mesh = SubResource("BoxMesh_groci")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WoodPlank2"]
 shape = SubResource("ConcavePolygonShape3D_hk32g")
+
+[node name="Shower" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2848, 24.8413, 42.7453)
+script = ExtResource("20_rq5oc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.03299, -0.386719, 0.103424)
+shape = SubResource("BoxShape3D_dn7h7")
+
+[node name="ShowerSFX" type="AudioStreamPlayer3D" parent="Shower"]
+stream = ExtResource("21_dn7h7")
+volume_db = 10.0
+autoplay = true
+max_distance = 6.0
+bus = &"SFX"
+
+[connection signal="body_entered" from="Shower" to="Shower" method="_on_body_entered"]
 
 [editable path="Door"]
 [editable path="Aparatment"]
