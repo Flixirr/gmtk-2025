@@ -95,7 +95,7 @@ bind/19/bone = -1
 bind/19/pose = Transform3D(0.0493855, 0.0138319, -1.00097, -0.990009, 0.149245, -0.0467823, 0.148413, 0.991076, 0.0210184, -0.0502766, -0.00284758, -0.00462671)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7v2fn"]
-size = Vector3(2.92761, 1.99435, 3.05457)
+size = Vector3(4.10545, 1.99435, 3.70307)
 
 [node name="ScareVictim" type="Area3D"]
 transform = Transform3D(-0.014189, 0, -0.999899, 0, 1, 0, 0.999899, 0, -0.014189, 0, 0, 0)

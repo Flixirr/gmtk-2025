@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=4 uid="uid://bcio3vsodu3cj"]
+[gd_scene load_steps=17 format=4 uid="uid://bcio3vsodu3cj"]
 
 [ext_resource type="Script" uid="uid://dkqnnpp7fp706" path="res://Scripts/Enviorment/lamp.gd" id="1_libks"]
 [ext_resource type="Texture2D" uid="uid://d001yo3iu4twj" path="res://Models/Pack2/Objects_Interior(Village)_Alpha/Textures/Desk_lamp.png" id="2_r8y26"]
 [ext_resource type="Texture2D" uid="uid://b0i18e4fdbfi3" path="res://Models/Pack5/Pe3.png" id="3_xow1e"]
 [ext_resource type="Texture2D" uid="uid://cqqfou4x2kqjb" path="res://Models/Pack/Cutlery.png" id="4_2iaoh"]
+[ext_resource type="AudioStream" uid="uid://dagl26brk3bb7" path="res://Audio/SFX/Enviro/KnifeStab.mp3" id="5_2iaoh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qih64"]
 resource_name = "Desk_lamp"
@@ -154,10 +155,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ptgpb")
 
-[node name="Lamp" type="StaticBody3D" node_paths=PackedStringArray("lampRefs", "puzzleLamps")]
+[node name="Lamp" type="StaticBody3D" node_paths=PackedStringArray("lampRefs") groups=["Lamp"]]
 script = ExtResource("1_libks")
 lampRefs = [NodePath(".")]
-puzzleLamps = [NodePath(".")]
 
 [node name="Desk_lamp" type="MeshInstance3D" parent="."]
 transform = Transform3D(34.4913, 0, 0, 0, -4.11168e-06, 34.4913, 0, -34.4913, -4.11168e-06, 0, 0, 0)
@@ -184,3 +184,7 @@ skeleton = NodePath("")
 transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, 0, 0.277054, 0)
 mesh = SubResource("ArrayMesh_yd8wk")
 skeleton = NodePath("")
+
+[node name="Stab" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_2iaoh")
+bus = &"SFX"

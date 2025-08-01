@@ -2,7 +2,7 @@ extends Interactable
 class_name Lamp
 
 @export var lampRefs : Array[Lamp] = []
-@export var puzzleLamps : Array[Lamp]
+var puzzleLamps : Array[Lamp]
 
 var puzzle_completed = false
 
@@ -10,9 +10,17 @@ var puzzle_completed = false
 
 @onready var head_scare = $HeadScare
 @onready var lamp_model = $Desk_lamp
+@onready var collider = $CollisionShape3D
+
+@onready var sfx = $Stab
+
+func _ready() -> void:
+	for lamp in get_tree().get_nodes_in_group("Lamp"):
+		puzzleLamps.append(lamp)
 
 func handle_toggle():
 	if not puzzle_completed:
+		sfx.play()
 		_turn_on_all()
 		_check_puzzle_completion()
 
@@ -36,4 +44,5 @@ func _check_puzzle_completion():
 		GlobalVariables.is_lamp_puzzle_complete = true
 		GlobalVariables.lamp_puzzle_complete.emit()
 		for lamp in puzzleLamps:
+			lamp.collider.disabled = true
 			lamp.switch_scare()

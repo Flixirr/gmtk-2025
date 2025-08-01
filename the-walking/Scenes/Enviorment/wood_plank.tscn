@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dcusaapcal5aa"]
 
 [ext_resource type="Script" uid="uid://c2vrdfbk8j8mh" path="res://Scripts/Interactions/plank.gd" id="1_2lf4v"]
-[ext_resource type="AudioStream" uid="uid://dn5fe4ilxw7mw" path="res://Audio/SFX/Enviro/Door_open.mp3" id="2_kysvl"]
+[ext_resource type="AudioStream" uid="uid://c6gjon1b7hnfp" path="res://Audio/SFX/Enviro/HammerHit.mp3" id="2_2lf4v"]
 [ext_resource type="Texture2D" uid="uid://dwder0oxjne0u" path="res://Models/Pack/Wood_12.jpg" id="3_5l771"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hk32g"]
@@ -19,7 +19,7 @@ data = PackedVector3Array(-0.85, 0.1, 0.01, 0.85, 0.1, 0.01, -0.85, -0.1, 0.01, 
 script = ExtResource("1_2lf4v")
 
 [node name="HammerHit" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("2_kysvl")
+stream = ExtResource("2_2lf4v")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_groci")
