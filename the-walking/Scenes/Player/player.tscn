@@ -1,10 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://ddv2bijbuunr2"]
+[gd_scene load_steps=18 format=3 uid="uid://ddv2bijbuunr2"]
 
 [ext_resource type="Script" uid="uid://dn8nalqdom7xp" path="res://Scripts/Player/player.gd" id="1_uvnfx"]
 [ext_resource type="Shader" uid="uid://botwyllqsh4w6" path="res://Scripts/Shaders/vhs_shader.gdshader" id="2_dd0ac"]
+[ext_resource type="Script" uid="uid://2rwjo1cdwh5q" path="res://Scripts/UI/pause_menu.gd" id="3_jlvik"]
 [ext_resource type="AudioStream" uid="uid://b6d4i8txwim1v" path="res://Audio/SFX/Player/Footstep1.mp3" id="4_0u5uq"]
+[ext_resource type="Script" uid="uid://b633w5ysf08kg" path="res://Scripts/UI/vol_slider.gd" id="4_gk6dx"]
+[ext_resource type="Script" uid="uid://dl01qdw4w3m43" path="res://Scripts/UI/sens_slider.gd" id="5_gk6dx"]
 [ext_resource type="AudioStream" uid="uid://bc0omscgt26rr" path="res://Audio/SFX/Player/Footstep2.mp3" id="5_jlvik"]
 [ext_resource type="AudioStream" uid="uid://2o4yifqadfow" path="res://Audio/SFX/Player/Footstep3.mp3" id="6_gk6dx"]
+[ext_resource type="Script" uid="uid://cd6p06segmdjb" path="res://Scripts/UI/VHS_Option.gd" id="6_jhyir"]
 [ext_resource type="AudioStream" uid="uid://ppnhs58m3w18" path="res://Audio/SFX/Player/Footstep4.mp3" id="7_jhyir"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dncm7"]
@@ -325,6 +329,151 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="PauseMenu" type="Control" parent="PlayerUI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_jlvik")
+
+[node name="ColorRect" type="ColorRect" parent="PlayerUI/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -207.0
+offset_right = 147.0
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerUI/PauseMenu/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Audio settings"
+
+[node name="MasterVol" type="HBoxContainer" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer/MasterVol"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Master"
+
+[node name="VolSlider" type="HSlider" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer/MasterVol"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("4_gk6dx")
+bus_name = "Master"
+
+[node name="SFXVol" type="HBoxContainer" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer/SFXVol"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SFX"
+
+[node name="VolSlider" type="HSlider" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer/SFXVol"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("4_gk6dx")
+bus_name = "SFX"
+
+[node name="MusicVol" type="HBoxContainer" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer/MusicVol"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Music"
+
+[node name="VolSlider" type="HSlider" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer/MusicVol"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("4_gk6dx")
+bus_name = "Music"
+
+[node name="Label2" type="Label" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Mouse settings"
+
+[node name="SensitivitySlider" type="HBoxContainer" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer/SensitivitySlider"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sensitivity"
+
+[node name="VolSlider" type="HSlider" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer/SensitivitySlider"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = 0.001
+max_value = 0.1
+step = 0.001
+value = 0.05
+script = ExtResource("5_gk6dx")
+
+[node name="Label3" type="Label" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Graphics"
+
+[node name="SensitivitySlider2" type="HBoxContainer" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer/SensitivitySlider2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "VHS Filter"
+
+[node name="CheckBox" type="CheckBox" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer/SensitivitySlider2"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+button_pressed = true
+text = "On"
+script = ExtResource("6_jhyir")
+
+[node name="Label4" type="Label" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "[ESC] Close menu"
+
 [node name="Audio" type="Node3D" parent="."]
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Audio"]
@@ -338,3 +487,4 @@ libraries = {
 }
 
 [connection signal="timeout" from="PlayerUI/Player/Timer" to="." method="_on_timer_timeout"]
+[connection signal="toggled" from="PlayerUI/PauseMenu/ColorRect/VBoxContainer/SensitivitySlider2/CheckBox" to="PlayerUI/PauseMenu/ColorRect/VBoxContainer/SensitivitySlider2/CheckBox" method="_on_toggled"]

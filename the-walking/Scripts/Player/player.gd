@@ -24,6 +24,8 @@ const JUMP_VELOCITY = 3.0
 @onready var inventory_ui = $PlayerUI/InventoryUI
 @onready var inventory_cam = $PlayerUI/InventoryView
 
+@onready var pause_menu = $PlayerUI/PauseMenu
+
 
 # Inventory
 var in_inventory : Array[InventoryItem] = []
@@ -81,6 +83,22 @@ func _unhandled_input(event: InputEvent) -> void:
 			note_ui.visible = false
 			_toggle_inventory_visibility(true)
 	
+	if event.is_action_pressed("pause"):
+		if not pause_menu.visible:
+			is_in_focus = true
+			pause_menu.visible = true
+			player_ui.visible = false
+			note_ui.visible = false
+			_toggle_inventory_visibility(false)
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			is_in_focus = false
+			pause_menu.visible = false
+			player_ui.visible = true
+			note_ui.visible = false
+			_toggle_inventory_visibility(false)
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 	if is_in_focus:
 		if inventory_ui.visible:
 			if event.is_action_pressed("WalkRight") and item_selected + 1 < in_inventory.size():
@@ -110,12 +128,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(min_cam_angle), deg_to_rad(max_cam_angle))
 		raycast.rotation.x = clamp(camera.rotation.x, deg_to_rad(min_cam_angle), deg_to_rad(max_cam_angle))
 
-# Pause and clicking into game
-	if event.is_action_pressed("pause"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	if event.is_action_pressed("left_click"):
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
 # head bob
