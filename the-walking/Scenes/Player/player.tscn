@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://dn8nalqdom7xp" path="res://Scripts/Player/player.gd" id="1_uvnfx"]
 [ext_resource type="Shader" uid="uid://botwyllqsh4w6" path="res://Scripts/Shaders/vhs_shader.gdshader" id="2_dd0ac"]
 [ext_resource type="Script" uid="uid://2rwjo1cdwh5q" path="res://Scripts/UI/pause_menu.gd" id="3_jlvik"]
-[ext_resource type="AudioStream" uid="uid://b6d4i8txwim1v" path="res://Audio/SFX/Player/Footstep1.mp3" id="4_0u5uq"]
+[ext_resource type="AudioStream" uid="uid://ns3ygajc5j83" path="res://Audio/SFX/Player/Footstep1.mp3" id="4_0u5uq"]
 [ext_resource type="Script" uid="uid://b633w5ysf08kg" path="res://Scripts/UI/vol_slider.gd" id="4_gk6dx"]
 [ext_resource type="Script" uid="uid://dl01qdw4w3m43" path="res://Scripts/UI/sens_slider.gd" id="5_gk6dx"]
-[ext_resource type="AudioStream" uid="uid://bc0omscgt26rr" path="res://Audio/SFX/Player/Footstep2.mp3" id="5_jlvik"]
-[ext_resource type="AudioStream" uid="uid://2o4yifqadfow" path="res://Audio/SFX/Player/Footstep3.mp3" id="6_gk6dx"]
+[ext_resource type="AudioStream" uid="uid://dfrn13dtyvuvv" path="res://Audio/SFX/Player/Footstep2.mp3" id="5_jlvik"]
+[ext_resource type="AudioStream" uid="uid://bdt8b54xutk8u" path="res://Audio/SFX/Player/Footstep3.mp3" id="6_gk6dx"]
 [ext_resource type="Script" uid="uid://cd6p06segmdjb" path="res://Scripts/UI/VHS_Option.gd" id="6_jhyir"]
-[ext_resource type="AudioStream" uid="uid://ppnhs58m3w18" path="res://Audio/SFX/Player/Footstep4.mp3" id="7_jhyir"]
+[ext_resource type="AudioStream" uid="uid://bcgbhnyd17o0y" path="res://Audio/SFX/Player/Footstep4.mp3" id="7_jhyir"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dncm7"]
 
