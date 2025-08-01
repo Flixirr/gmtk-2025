@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bir84ln42rarp"]
+
+[ext_resource type="Texture2D" uid="uid://ohjsvw7orhj1" path="res://Textures/Blood textures/256x256/Misc/Horror_Misc_15-256x256.png" id="1_5414v"]
+
+[resource]
+albedo_texture = ExtResource("1_5414v")
+uv1_triplanar = true
+uv1_world_triplanar = true
