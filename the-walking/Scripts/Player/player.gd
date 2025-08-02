@@ -277,9 +277,6 @@ func _toggle_inventory_visibility(visibility):
 	inventory_cam.visible = visibility
 	inventory_ui.visible = visibility
 
-@export var good_ending_scene : PackedScene
-@export var bad_ending_scene : PackedScene
-
 @export var is_good_ending = false
 
 func player_ending():
@@ -290,6 +287,6 @@ func player_ending():
 func _fade_out_finished(anim_name):
 	if anim_name == "fade_out":
 		if is_good_ending:
-			get_tree().change_scene_to_packed(good_ending_scene)
+			get_tree().change_scene_to_file("res://Levels/GoodEnding.tscn")
 		else:
-			get_tree().change_scene_to_packed(bad_ending_scene)
+			get_tree().change_scene_to_file("res://Levels/BadEnding.tscn")

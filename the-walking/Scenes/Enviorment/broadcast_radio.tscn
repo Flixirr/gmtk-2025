@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://r5e2mt0x1ms3"]
 
 [ext_resource type="Script" uid="uid://dt2lxfw0i2744" path="res://Scripts/Enviorment/trigger_radio.gd" id="1_vspow"]
-[ext_resource type="AudioStream" uid="uid://cleqofhoxiy0q" path="res://Audio/SFX/Enviro/radio_paul.mp3" id="2_vspow"]
+[ext_resource type="AudioStream" uid="uid://cjlewofppbmyp" path="res://Audio/SFX/Enviro/radio_paul.mp3" id="2_vspow"]
 [ext_resource type="Texture2D" uid="uid://ch38cuhga1ncy" path="res://Models/Pack2/Objects_Interior(Village)_Alpha/Textures/Radio_01.png" id="3_po0go"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p5gvt"]

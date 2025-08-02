@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://do00eej2vjogw"]
+[gd_scene load_steps=5 format=3 uid="uid://b0o1w1sffcn6o"]
 
-[ext_resource type="Script" uid="uid://ddow6e2kb3fr" path="res://Scripts/UI/start.gd" id="1_7yjxh"]
-[ext_resource type="PackedScene" uid="uid://ukrkwqo4reae" path="res://Levels/Start.tscn" id="2_7yjxh"]
+[ext_resource type="Script" uid="uid://ddow6e2kb3fr" path="res://Scripts/UI/start.gd" id="1_mqavp"]
 
 [sub_resource type="Animation" id="Animation_leigp"]
 length = 0.001
@@ -47,8 +46,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_7yjxh")
-main_level = ExtResource("2_7yjxh")
+script = ExtResource("1_mqavp")
+is_ending = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -73,7 +72,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 35
-text = "And that's how the story ends. How tragic."
+text = "So this is how it ends. Tragic."
 
 [node name="Blind" type="ColorRect" parent="."]
 layout_mode = 1

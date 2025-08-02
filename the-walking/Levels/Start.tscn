@@ -1,7 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ukrkwqo4reae"]
 
 [ext_resource type="Script" uid="uid://ddow6e2kb3fr" path="res://Scripts/UI/start.gd" id="1_2232m"]
-[ext_resource type="PackedScene" uid="uid://bysy676ko55yd" path="res://Levels/MainLevel.tscn" id="2_biyxg"]
 
 [sub_resource type="Animation" id="Animation_biyxg"]
 resource_name = "start"
@@ -48,7 +47,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2232m")
-main_level = ExtResource("2_biyxg")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
