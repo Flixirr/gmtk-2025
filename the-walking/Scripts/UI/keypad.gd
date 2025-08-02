@@ -73,6 +73,8 @@ func _on_button_enter_pressed() -> void:
 		GlobalVariables.keypad_puzzle_complete.emit()
 		success_sfx.play()
 	else:
+		typed_text = ""
+		input_text.text = typed_text
 		fail_sfx.play()
 
 

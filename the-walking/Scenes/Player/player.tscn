@@ -1,19 +1,20 @@
-[gd_scene load_steps=26 format=3 uid="uid://ddv2bijbuunr2"]
+[gd_scene load_steps=27 format=3 uid="uid://ddv2bijbuunr2"]
 
 [ext_resource type="Script" uid="uid://dn8nalqdom7xp" path="res://Scripts/Player/player.gd" id="1_uvnfx"]
 [ext_resource type="Script" uid="uid://c50wh21dd8nl0" path="res://Scripts/UI/keypad.gd" id="2_74mp2"]
 [ext_resource type="Shader" uid="uid://botwyllqsh4w6" path="res://Scripts/Shaders/vhs_shader.gdshader" id="2_dd0ac"]
-[ext_resource type="AudioStream" uid="uid://cs6kr7rf00cd6" path="res://Audio/SFX/Enviro/KeypadButtonPress.mp3" id="3_7g0yx"]
+[ext_resource type="AudioStream" uid="uid://o2qtcg185w80" path="res://Audio/SFX/Enviro/KeypadButtonPress.mp3" id="3_7g0yx"]
 [ext_resource type="Script" uid="uid://2rwjo1cdwh5q" path="res://Scripts/UI/pause_menu.gd" id="3_jlvik"]
-[ext_resource type="AudioStream" uid="uid://ns3ygajc5j83" path="res://Audio/SFX/Player/Footstep1.mp3" id="4_0u5uq"]
-[ext_resource type="AudioStream" uid="uid://bhbtal1onhugf" path="res://Audio/SFX/Enviro/KeypadFail.mp3" id="4_dey5f"]
+[ext_resource type="AudioStream" uid="uid://b6d4i8txwim1v" path="res://Audio/SFX/Player/Footstep1.mp3" id="4_0u5uq"]
+[ext_resource type="AudioStream" uid="uid://cmsm5fcvgd5oi" path="res://Audio/SFX/Enviro/KeypadFail.mp3" id="4_dey5f"]
 [ext_resource type="Script" uid="uid://b633w5ysf08kg" path="res://Scripts/UI/vol_slider.gd" id="4_gk6dx"]
 [ext_resource type="Script" uid="uid://dl01qdw4w3m43" path="res://Scripts/UI/sens_slider.gd" id="5_gk6dx"]
-[ext_resource type="AudioStream" uid="uid://dfrn13dtyvuvv" path="res://Audio/SFX/Player/Footstep2.mp3" id="5_jlvik"]
-[ext_resource type="AudioStream" uid="uid://c78e54676fwuu" path="res://Audio/SFX/Enviro/KeypadSuccess.mp3" id="5_r5xpd"]
-[ext_resource type="AudioStream" uid="uid://bdt8b54xutk8u" path="res://Audio/SFX/Player/Footstep3.mp3" id="6_gk6dx"]
+[ext_resource type="AudioStream" uid="uid://bc0omscgt26rr" path="res://Audio/SFX/Player/Footstep2.mp3" id="5_jlvik"]
+[ext_resource type="AudioStream" uid="uid://b71a18ggaiq88" path="res://Audio/SFX/Enviro/KeypadSuccess.mp3" id="5_r5xpd"]
+[ext_resource type="AudioStream" uid="uid://2o4yifqadfow" path="res://Audio/SFX/Player/Footstep3.mp3" id="6_gk6dx"]
 [ext_resource type="Script" uid="uid://cd6p06segmdjb" path="res://Scripts/UI/VHS_Option.gd" id="6_jhyir"]
-[ext_resource type="AudioStream" uid="uid://bcgbhnyd17o0y" path="res://Audio/SFX/Player/Footstep4.mp3" id="7_jhyir"]
+[ext_resource type="AudioStream" uid="uid://ppnhs58m3w18" path="res://Audio/SFX/Player/Footstep4.mp3" id="7_jhyir"]
+[ext_resource type="Script" uid="uid://bl7t1q8kovb6i" path="res://Scripts/UI/fullscreen.gd" id="11_dey5f"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dncm7"]
 
@@ -680,6 +681,21 @@ button_pressed = true
 text = "On"
 script = ExtResource("6_jhyir")
 
+[node name="SensitivitySlider3" type="HBoxContainer" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer/SensitivitySlider3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Fullscreen"
+
+[node name="CheckBox" type="CheckBox" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer/SensitivitySlider3"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "Off"
+script = ExtResource("11_dey5f")
+
 [node name="Label4" type="Label" parent="PlayerUI/PauseMenu/ColorRect/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -726,3 +742,4 @@ libraries = {
 [connection signal="pressed" from="PlayerUI/Keypad/VBoxContainer/Numpad4/Button4" to="PlayerUI/Keypad" method="_on_button_0_pressed"]
 [connection signal="pressed" from="PlayerUI/Keypad/VBoxContainer/Numpad4/Button3" to="PlayerUI/Keypad" method="_on_button_enter_pressed"]
 [connection signal="toggled" from="PlayerUI/PauseMenu/ColorRect/VBoxContainer/SensitivitySlider2/CheckBox" to="PlayerUI/PauseMenu/ColorRect/VBoxContainer/SensitivitySlider2/CheckBox" method="_on_toggled"]
+[connection signal="toggled" from="PlayerUI/PauseMenu/ColorRect/VBoxContainer/SensitivitySlider3/CheckBox" to="PlayerUI/PauseMenu/ColorRect/VBoxContainer/SensitivitySlider3/CheckBox" method="_on_toggled"]
