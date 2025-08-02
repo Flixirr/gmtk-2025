@@ -16546,10 +16546,16 @@ You took their light.
 
 Now you try to rekindle it."
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(0.707107, -0.00293723, 0.707101, 0, 0.999991, 0.00415387, -0.707107, -0.00293723, 0.707101, -13.4935, 0.5976, -5.01333)
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.711534, -0.147429, 0.687011, -0.262342, 0.851297, 0.45439, -0.65184, -0.503546, 0.56705, -13.1551, 0.424806, -5.89012)
 light_color = Color(1, 0, 0, 1)
-light_energy = 2.105
+light_energy = 14.395
+light_size = 0.654
+light_specular = 16.0
+spot_range = 3.849
+spot_angle = 20.5227
 
 [editable path="Aparatment/Apartment/Entrance Corridor/Door"]
 [editable path="Aparatment/Apartment/Exit Corridor/Door"]
