@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://oqbpiw2rcmq8" path="res://Scenes/Enviorment/matches.tscn" id="10_uf45e"]
 [ext_resource type="PackedScene" uid="uid://rafbn0pl1ey6" path="res://Scenes/Enviorment/petrol.tscn" id="11_pqe7h"]
 [ext_resource type="PackedScene" uid="uid://cn0wwqw031c18" path="res://Scenes/Enviorment/burnable_body.tscn" id="13_hk32g"]
-[ext_resource type="AudioStream" uid="uid://dn5fe4ilxw7mw" path="res://Audio/SFX/Enviro/Door_open.mp3" id="15_o3ehr"]
+[ext_resource type="AudioStream" uid="uid://b7x54n7ok7vw6" path="res://Audio/SFX/Enviro/Door_open.mp3" id="15_o3ehr"]
 [ext_resource type="Texture2D" uid="uid://dwder0oxjne0u" path="res://Models/Pack/Wood_12.jpg" id="17_g6h5i"]
 [ext_resource type="PackedScene" uid="uid://dcusaapcal5aa" path="res://Scenes/Enviorment/wood_plank.tscn" id="17_groci"]
 [ext_resource type="Script" uid="uid://c2vrdfbk8j8mh" path="res://Scripts/Interactions/plank.gd" id="17_hk32g"]
