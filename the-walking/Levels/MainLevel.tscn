@@ -15516,44 +15516,38 @@ transform = Transform3D(-0.563987, 0, 0.825783, 0, 1, 0, -0.825783, 0, -0.563987
 
 [node name="Note" parent="Aparatment4" instance=ExtResource("3_idxu3")]
 transform = Transform3D(-4.18791e-08, 1, 1.25229e-08, 0.427263, 2.92157e-08, -0.904127, -0.904127, -3.25135e-08, -0.427263, -11.8634, 2.33533, -12.8967)
-note_text = "First Victim // 7
+note_text = "1st victim // 7
 
-You found her alone while on a walk.
+She was by herself during her usual commute, for some reason that day the air felt like it weighed a ton. 
 
-It was like a fever dream. 
-
-Something told you to do it."
+I don’t remember making the decision, it’s as if someone was breathing down my neck but something… led me here. 
+"
 
 [node name="Note3" parent="Aparatment4" instance=ExtResource("3_idxu3")]
 transform = Transform3D(0.958083, 5.47394e-16, -0.286491, -0.286491, 1.8306e-15, -0.958083, 0, 1, 1.91069e-15, -12.8778, 2.40049, -12.8973)
-note_text = "Fourth Victim // 8
+note_text = "4th victim //  8
 
-Your last one. Remember?
+The final one, that was the plan at the time at least. 
 
-It was just his dog that was barking too loud.
-
-But you couldn't be bothered with just telling him about it.
-"
+It started with the dog and it wouldn’t end until I was through them all."
 
 [node name="Note4" parent="Aparatment4" instance=ExtResource("3_idxu3")]
 transform = Transform3D(0.973487, -9.11726e-16, 0.228742, 0.228742, 1.5874e-15, -0.973487, 3.55271e-15, 1, 8.88178e-16, -14.9329, 2.40049, -18.4513)
-note_text = "Second Victim // 3
+note_text = "2nd victim // 3
 
-You decided to be an artist, finally.
+That was when you started to call it art. 
 
-Carved a little butterfly.
+I made a butterfly, delicate and deliberate and most importantly beautiful. 
 
-That's how they nicknamed you."
+And of course they noticed."
 
 [node name="Note2" parent="Aparatment4" instance=ExtResource("3_idxu3")]
 transform = Transform3D(0.958083, -4.65521e-10, -0.286491, 0.00762441, 0.999646, 0.0254975, 0.28639, -0.0266131, 0.957744, -16.4092, 1.56787, -7.25686)
-note_text = "Third Victim // 7
+note_text = "3rd victim // 7
 
-You were almost caught, remember?
+Too sharp, too sudden, one sound that nearly unraveled everything. 
 
-The scream was too loud.
-
-If you didn't burn him like the rest of them, they'd have found you sooner."
+Handled it like usual just slightly earlier than planned."
 
 [node name="Aparatment5" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -29, 0)
@@ -16506,35 +16500,28 @@ Clean up the kitchen"
 
 [node name="Note2" parent="." instance=ExtResource("3_idxu3")]
 transform = Transform3D(-4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, -1, -1, -4.37114e-08, -4.37114e-08, -11.8604, -26.9059, -11.944)
-note_text = "I left you a gift on kitchen table.
+note_text = "I left something for you on the kitchen, you’ll know what to do.
 
-Get rid of them.
+But then again.. 
 
-But you don't have to.
-
-- The Host"
+you don’t have to"
 
 [node name="Note3" parent="." instance=ExtResource("3_idxu3")]
 transform = Transform3D(-4.37114e-08, 1, 0, -0.310179, -1.35583e-08, -0.950678, -0.950678, -4.15555e-08, 0.310179, -11.8748, 28.2086, -12.1153)
-note_text = "Daddy liked to drink. And argue.
+note_text = "Father loved his booze, always saw himself as his shadow rather than the truth. 
 
-And god help us when he argued.
-
-You can still hear him crying.
-
-Rejecting who he was.
-
-No wonder mommy left him."
+God help anyone who fought back."
 
 [node name="Note4" parent="." instance=ExtResource("3_idxu3")]
 transform = Transform3D(0.948997, 1.37815e-08, 0.315285, 0.315285, -4.1482e-08, -0.948997, 0, 1, -4.37114e-08, -16.0769, 28.1873, -18.4731)
-note_text = "After divorce mommy had many men come to the house.
+note_text = "Ever since the divorce, there were always new men. 
 
-And you remember this very well.
+I remember every face and every voice behind closed doors. 
 
-After all, this is one of the reasons you became so aggressive.
+It wasn't just the noise, but the silence that followed. 
 
-So wild."
+It made life grim, something in me hardened. 
+"
 
 [node name="GoodEnding" parent="." instance=ExtResource("82_gc34d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.8578, -1.5, -16.4226)
@@ -16554,11 +16541,11 @@ shape = SubResource("BoxShape3D_5refa")
 
 [node name="Note5" parent="." instance=ExtResource("3_idxu3")]
 transform = Transform3D(-4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, -1, -1, -4.37114e-08, -4.37114e-08, -11.8755, 55.3677, -11.2008)
-note_text = "A lamp for each victim.
+note_text = "A lamp to every soul.
 
-You killed them.
+You took their light.
 
-Now you bring them back."
+Now you try to rekindle it."
 
 [editable path="Aparatment/Apartment/Entrance Corridor/Door"]
 [editable path="Aparatment/Apartment/Exit Corridor/Door"]
