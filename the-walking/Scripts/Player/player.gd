@@ -27,6 +27,8 @@ const JUMP_VELOCITY = 3.0
 
 @onready var pause_menu = $PlayerUI/PauseMenu
 
+@onready var ui_anim = $UI_Anim
+
 
 # Inventory
 var in_inventory : Array[InventoryItem] = []
@@ -48,6 +50,8 @@ func _ready() -> void:
 	GlobalVariables.player_dialogue.connect(_on_dialogue_received)
 	GlobalVariables.system_dialogue.connect(_on_system_dialogue_received)
 	GlobalVariables.phone_dialogue.connect(_on_phone_dialogue_received)
+	ui_anim.play("fade_id")
+	ui_anim.animation_finished.connect(_fade_out_finished)
 	
 
 func rotate_cam(angles):
@@ -272,3 +276,20 @@ func _toggle_inventory_visibility(visibility):
 	_get_inventory_items()
 	inventory_cam.visible = visibility
 	inventory_ui.visible = visibility
+
+@export var good_ending_scene : PackedScene
+@export var bad_ending_scene : PackedScene
+
+@export var is_good_ending = false
+
+func player_ending():
+	print("enter")
+	ui_anim.play("fade_out")
+	
+
+func _fade_out_finished(anim_name):
+	if anim_name == "fade_out":
+		if is_good_ending:
+			get_tree().change_scene_to_packed(good_ending_scene)
+		else:
+			get_tree().change_scene_to_packed(bad_ending_scene)

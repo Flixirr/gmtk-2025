@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://do4jdljgen5qx"]
+
+[ext_resource type="Script" uid="uid://bfj4ctuuyxysb" path="res://Scripts/Enviorment/good_ending.gd" id="1_t7ufd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2a8xl"]
+size = Vector3(1, 2.04858, 3.67749)
+
+[node name="GoodEnding" type="Area3D"]
+script = ExtResource("1_t7ufd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_2a8xl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

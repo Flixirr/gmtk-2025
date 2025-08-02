@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b2c0j0823j13o"]
+[gd_scene load_steps=27 format=3 uid="uid://b2c0j0823j13o"]
 
 [ext_resource type="Material" uid="uid://cr8s6dguk66lx" path="res://Materials/Bathroom_TiLES.tres" id="1_2y0bb"]
 [ext_resource type="PackedScene" uid="uid://ddv2bijbuunr2" path="res://Scenes/Player/player.tscn" id="1_nul47"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://kw2k2fagdyi6" path="res://Scenes/Enviorment/phone.tscn" id="20_dn7h7"]
 [ext_resource type="PackedScene" uid="uid://uqyv8yvv40ac" path="res://Scenes/Enviorment/shower.tscn" id="20_rq5oc"]
 [ext_resource type="PackedScene" uid="uid://dxnsbqs7skgcy" path="res://Scenes/Enviorment/keypad.tscn" id="21_stj8f"]
+[ext_resource type="PackedScene" uid="uid://do4jdljgen5qx" path="res://Scenes/good_ending.tscn" id="22_stj8f"]
 
 [sub_resource type="Environment" id="Environment_dc5qw"]
 ssao_enabled = true
@@ -145,6 +146,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.415072, 0)
 
 [node name="Keypad" parent="." instance=ExtResource("21_stj8f")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.61933, 0, 0)
+
+[node name="GoodEnding" parent="." instance=ExtResource("22_stj8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.767098, -1.15275, -8.7485)
 
 [editable path="Door"]
 [editable path="Door2"]

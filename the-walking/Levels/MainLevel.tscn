@@ -1,4 +1,4 @@
-[gd_scene load_steps=920 format=4 uid="uid://bysy676ko55yd"]
+[gd_scene load_steps=921 format=4 uid="uid://bysy676ko55yd"]
 
 [ext_resource type="PackedScene" uid="uid://ddv2bijbuunr2" path="res://Scenes/Player/player.tscn" id="1_ovnwc"]
 [ext_resource type="PackedScene" uid="uid://deiy30aixjv2b" path="res://Scenes/Enviorment/teleport.tscn" id="2_8yr1i"]
@@ -53,6 +53,7 @@
 [ext_resource type="AudioStream" uid="uid://4ka5i6amyr4x" path="res://Audio/SFX/Enviro/Whispers.mp3" id="73_5vifi"]
 [ext_resource type="PackedScene" uid="uid://dcusaapcal5aa" path="res://Scenes/Enviorment/wood_plank.tscn" id="77_uet2j"]
 [ext_resource type="PackedScene" uid="uid://r5e2mt0x1ms3" path="res://Scenes/Enviorment/broadcast_radio.tscn" id="79_tr4ch"]
+[ext_resource type="PackedScene" uid="uid://do4jdljgen5qx" path="res://Scenes/good_ending.tscn" id="82_gc34d"]
 [ext_resource type="Texture2D" uid="uid://p55bskaemk26" path="res://Models/Pack2/Objects_Interior(Village)_Alpha/Textures/Box_Pizza.png" id="89_ts58k"]
 [ext_resource type="Texture2D" uid="uid://b2tynebyy4845" path="res://Models/Pack2/Objects_Interior(Village)_Alpha/Textures/Paintings.jpg" id="90_16ebu"]
 [ext_resource type="Texture2D" uid="uid://b27bkmwtd1e64" path="res://Models/Pack2/Objects_Interior(Village)_Alpha/Textures/Trash_can.png" id="93_fke18"]
@@ -13841,7 +13842,7 @@ skeleton = NodePath("")
 
 [node name="Note" parent="Aparatment3" instance=ExtResource("3_idxu3")]
 transform = Transform3D(0.634528, 0, -0.7729, 0, 1, 0, 0.7729, 0, 0.634528, -11.8437, 1.34344, -7.80686)
-note_text = "Quite the restless souls."
+note_text = "You did this."
 
 [node name="Sink Head" type="MeshInstance3D" parent="Aparatment3"]
 transform = Transform3D(4.48288, -19.3185, -2.58819, -16.7303, -5.17638, 9.65926, -10, 4.76837e-07, -17.3205, -17.4784, 1.61718, -9.45764)
@@ -14844,19 +14845,44 @@ transform = Transform3D(-0.563987, 0, 0.825783, 0, 1, 0, -0.825783, 0, -0.563987
 
 [node name="Note" parent="Aparatment4" instance=ExtResource("3_idxu3")]
 transform = Transform3D(-4.18791e-08, 1, 1.25229e-08, 0.427263, 2.92157e-08, -0.904127, -0.904127, -3.25135e-08, -0.427263, -11.8634, 2.33533, -12.8967)
-note_text = "First Victim // 7"
+note_text = "First Victim // 7
+
+You found her alone while on a walk.
+
+It was like a fever dream. 
+
+Something told you to do it."
 
 [node name="Note3" parent="Aparatment4" instance=ExtResource("3_idxu3")]
 transform = Transform3D(0.958083, 5.47394e-16, -0.286491, -0.286491, 1.8306e-15, -0.958083, 0, 1, 1.91069e-15, -12.8778, 2.40049, -12.8973)
-note_text = "Fourth Victim // 8"
+note_text = "Fourth Victim // 8
+
+Your last one. Remember?
+
+It was just his dog that was barking too loud.
+
+But you couldn't be bothered with just telling him about it.
+"
 
 [node name="Note4" parent="Aparatment4" instance=ExtResource("3_idxu3")]
 transform = Transform3D(0.973487, -9.11726e-16, 0.228742, 0.228742, 1.5874e-15, -0.973487, 3.55271e-15, 1, 8.88178e-16, -14.9329, 2.40049, -18.4513)
-note_text = "Second Victim // 3"
+note_text = "Second Victim // 3
+
+You decided to be an artist, finally.
+
+Carved a little butterfly.
+
+That's how they nicknamed you."
 
 [node name="Note2" parent="Aparatment4" instance=ExtResource("3_idxu3")]
 transform = Transform3D(0.958083, -4.65521e-10, -0.286491, 0.00762441, 0.999646, 0.0254975, 0.28639, -0.0266131, 0.957744, -16.4092, 1.56787, -7.25686)
-note_text = "Third Victim // 7"
+note_text = "Third Victim // 7
+
+You were almost caught, remember?
+
+The scream was too loud.
+
+If you didn't burn him like the rest of them, they'd have found you sooner."
 
 [node name="Aparatment5" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -29, 0)
@@ -15587,7 +15613,7 @@ mesh = SubResource("ArrayMesh_0nnoi")
 skeleton = NodePath("")
 
 [node name="Matches" parent="Aparatment5" instance=ExtResource("72_5vifi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6989, 1.66036, -8.65322)
+transform = Transform3D(-0.315218, 0, 0.949019, 0, 1, 0, -0.949019, 0, -0.315218, -16.2788, 1.66036, -7.42385)
 
 [node name="BurnableBody" parent="Aparatment5" instance=ExtResource("64_sg70f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25862, 1.53855, -13.3327)
@@ -15794,7 +15820,7 @@ material = ExtResource("54_gyv05")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6073, 28.0496, -14.9349)
 
 [node name="Note" parent="." instance=ExtResource("3_idxu3")]
-transform = Transform3D(-2.18557e-08, 0.5, -2.18557e-08, 0, -2.18557e-08, -0.5, -0.5, -2.18557e-08, 9.55343e-16, -18.703, 27.652, -6.62028)
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0.239093, -3.19925e-08, -0.970997, -0.970997, -5.28947e-08, -0.239093, -18.703, 27.5596, -6.45863)
 note_text = "1988-05-02
 TODO :
 
@@ -15810,6 +15836,43 @@ Clean up the kitchen
 Clean up the kitchen
 Clean up the kitchen
 Clean up the kitchen"
+
+[node name="Note2" parent="." instance=ExtResource("3_idxu3")]
+transform = Transform3D(-4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, -1, -1, -4.37114e-08, -4.37114e-08, -11.8604, -26.9059, -11.944)
+note_text = "I left you a gift on kitchen table.
+
+Get rid of them.
+
+But you don't have to.
+
+- The Host"
+
+[node name="Note3" parent="." instance=ExtResource("3_idxu3")]
+transform = Transform3D(-4.37114e-08, 1, 0, -0.310179, -1.35583e-08, -0.950678, -0.950678, -4.15555e-08, 0.310179, -11.8748, 28.2086, -12.1153)
+note_text = "Daddy liked to drink. And argue.
+
+And god help us when he argued.
+
+You still hear him crying.
+
+Rejecting who he was.
+
+No wonder mommy left him."
+
+[node name="Note4" parent="." instance=ExtResource("3_idxu3")]
+transform = Transform3D(0.948997, 1.37815e-08, 0.315285, 0.315285, -4.1482e-08, -0.948997, 0, 1, -4.37114e-08, -16.0769, 28.1873, -18.4731)
+note_text = "After divorce mommy had many men come to the house.
+
+And you just HAD to listen.
+
+It's not like you were forced. 
+
+You really enjoyed tortuting yourself.
+
+Fortunately for me, you decided to also torture others."
+
+[node name="GoodEnding" parent="." instance=ExtResource("82_gc34d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.8578, -1.5, -16.4226)
 
 [editable path="Aparatment/Apartment/Entrance Corridor/Door"]
 [editable path="Aparatment/Apartment/Exit Corridor/Door"]
@@ -15829,3 +15892,4 @@ Clean up the kitchen"
 [editable path="Aparatment5/Teleport"]
 [editable path="Police/Teleport"]
 [editable path="Player"]
+[editable path="GoodEnding"]
