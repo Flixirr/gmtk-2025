@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cugi8n8twt6wq" path="res://Models/Pack2/Objects_Interior(Village)_Alpha/Textures/Phone_01.png" id="20_dn7h7"]
 [ext_resource type="PackedScene" uid="uid://uqyv8yvv40ac" path="res://Scenes/Enviorment/shower.tscn" id="20_rq5oc"]
 [ext_resource type="AudioStream" uid="uid://cicfk0g451c33" path="res://Audio/SFX/Enviro/PhoneRing.mp3" id="21_stj8f"]
-[ext_resource type="AudioStream" uid="uid://d21gwiwdl6my" path="res://Audio/SFX/Enviro/phone_voice.wav" id="23_2a8xl"]
+[ext_resource type="AudioStream" uid="uid://dshicdegx6rwi" path="res://Audio/SFX/Enviro/phone_voice.mp3" id="22_2a8xl"]
 
 [sub_resource type="Environment" id="Environment_dc5qw"]
 ssao_enabled = true
@@ -200,7 +200,7 @@ pitch_scale = 0.55
 bus = &"SFX"
 
 [node name="PhoneVoice" type="AudioStreamPlayer3D" parent="Phone"]
-stream = ExtResource("23_2a8xl")
+stream = ExtResource("22_2a8xl")
 volume_db = 5.0
 bus = &"SFX"
 
