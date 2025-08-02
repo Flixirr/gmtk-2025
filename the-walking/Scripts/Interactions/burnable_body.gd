@@ -9,6 +9,9 @@ extends RequireItem
 var petrol_poured = false
 var object_lit = false
 
+func _ready():
+	GlobalVariables.bodies_burned = 0
+
 func item_interaction(item_name : String):
 	print(item_name)
 	if item_name.to_lower() == "petrol" and not petrol_poured:

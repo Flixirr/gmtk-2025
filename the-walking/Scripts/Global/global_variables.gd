@@ -1,6 +1,9 @@
 extends Node
 
-@export var mouse_sensitivity = 0.0001
+@export var mouse_sensitivity = 0.005
+@export var master_vol = 1.0
+@export var sfx_vol = 1.0
+@export var music_vol = 1.0
 @export var bodies_burned = 0
 @export var is_lamp_puzzle_complete = false
 
