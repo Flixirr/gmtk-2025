@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://oqbpiw2rcmq8" path="res://Scenes/Enviorment/matches.tscn" id="10_uf45e"]
 [ext_resource type="PackedScene" uid="uid://rafbn0pl1ey6" path="res://Scenes/Enviorment/petrol.tscn" id="11_pqe7h"]
 [ext_resource type="PackedScene" uid="uid://cn0wwqw031c18" path="res://Scenes/Enviorment/burnable_body.tscn" id="13_hk32g"]
-[ext_resource type="AudioStream" uid="uid://dn5fe4ilxw7mw" path="res://Audio/SFX/Enviro/Door_open.mp3" id="15_o3ehr"]
+[ext_resource type="AudioStream" uid="uid://b7x54n7ok7vw6" path="res://Audio/SFX/Enviro/Door_open.mp3" id="15_o3ehr"]
 [ext_resource type="Texture2D" uid="uid://dwder0oxjne0u" path="res://Models/Pack/Wood_12.jpg" id="17_g6h5i"]
 [ext_resource type="PackedScene" uid="uid://dcusaapcal5aa" path="res://Scenes/Enviorment/wood_plank.tscn" id="17_groci"]
 [ext_resource type="Script" uid="uid://c2vrdfbk8j8mh" path="res://Scripts/Interactions/plank.gd" id="17_hk32g"]
@@ -21,8 +21,8 @@
 [ext_resource type="Script" uid="uid://caqyucsors2rj" path="res://Scripts/Enviorment/phone.gd" id="20_2a8xl"]
 [ext_resource type="Texture2D" uid="uid://cugi8n8twt6wq" path="res://Models/Pack2/Objects_Interior(Village)_Alpha/Textures/Phone_01.png" id="20_dn7h7"]
 [ext_resource type="PackedScene" uid="uid://uqyv8yvv40ac" path="res://Scenes/Enviorment/shower.tscn" id="20_rq5oc"]
-[ext_resource type="AudioStream" uid="uid://dkb2gwpf4nv4m" path="res://Audio/SFX/Enviro/PhoneRing.mp3" id="21_stj8f"]
-[ext_resource type="AudioStream" uid="uid://bl01o0nr6vg4y" path="res://Audio/SFX/Enviro/phone_voice.mp3" id="22_2a8xl"]
+[ext_resource type="AudioStream" uid="uid://cicfk0g451c33" path="res://Audio/SFX/Enviro/PhoneRing.mp3" id="21_stj8f"]
+[ext_resource type="AudioStream" uid="uid://d21gwiwdl6my" path="res://Audio/SFX/Enviro/phone_voice.wav" id="23_2a8xl"]
 
 [sub_resource type="Environment" id="Environment_dc5qw"]
 ssao_enabled = true
@@ -200,7 +200,7 @@ pitch_scale = 0.55
 bus = &"SFX"
 
 [node name="PhoneVoice" type="AudioStreamPlayer3D" parent="Phone"]
-stream = ExtResource("22_2a8xl")
+stream = ExtResource("23_2a8xl")
 volume_db = 5.0
 bus = &"SFX"
 
