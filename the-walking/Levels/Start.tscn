@@ -1,6 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://ukrkwqo4reae"]
+[gd_scene load_steps=5 format=3 uid="uid://ukrkwqo4reae"]
 
 [ext_resource type="Script" uid="uid://ddow6e2kb3fr" path="res://Scripts/UI/start.gd" id="1_2232m"]
+
+[sub_resource type="Animation" id="Animation_leigp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blind:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_biyxg"]
 resource_name = "start"
@@ -16,21 +31,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_leigp"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Blind:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c4vcl"]
@@ -71,7 +71,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 35
-text = "To live is to die."
+text = "where it all begins again?"
 
 [node name="Blind" type="ColorRect" parent="."]
 layout_mode = 1

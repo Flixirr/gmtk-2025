@@ -236,6 +236,8 @@ func _handle_raycast():
 			note_ui.visible = false
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			is_in_focus = true
+		elif raycast_hit is Noose:
+			player_ending()
 		elif raycast_hit is Phone:
 			raycast_hit.interact()
 		elif raycast_hit is Lamp:
@@ -280,7 +282,12 @@ func _toggle_inventory_visibility(visibility):
 @export var is_good_ending = false
 
 func player_ending():
-	print("enter")
+	is_in_focus = true
+	player_ui.visible = false
+	note_ui.visible = false
+	keypad_ui.visible = false
+	pause_menu.visible = false
+	_toggle_inventory_visibility(false)
 	ui_anim.play("fade_out")
 	
 

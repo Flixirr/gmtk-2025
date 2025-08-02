@@ -15,6 +15,7 @@ var puzzle_completed = false
 @onready var sfx = $Stab
 
 func _ready() -> void:
+	GlobalVariables.is_lamp_puzzle_complete = false
 	for lamp in get_tree().get_nodes_in_group("Lamp"):
 		puzzleLamps.append(lamp)
 
