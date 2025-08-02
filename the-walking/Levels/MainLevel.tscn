@@ -37,21 +37,21 @@
 [ext_resource type="Texture2D" uid="uid://i6upwoggn774" path="res://Models/Pack2/Objects_Interior(Village)_Alpha/Textures/Chair_05.png" id="42_fnwix"]
 [ext_resource type="Texture2D" uid="uid://cugi8n8twt6wq" path="res://Models/Pack2/Objects_Interior(Village)_Alpha/Textures/Phone_01.png" id="50_svkhf"]
 [ext_resource type="Texture2D" uid="uid://4smbl005n4gg" path="res://Models/Pack2/Objects_Interior(Village)_Alpha/Textures/Ventilator.png" id="50_yshe4"]
-[ext_resource type="Texture2D" uid="uid://c8bwet436270d" path="res://Textures/Blood textures/256x256/Stains/Horror_Stain_03-256x256.png" id="51_okeeu"]
+[ext_resource type="Texture2D" uid="uid://78co7yxfunec" path="res://Textures/Blood textures/256x256/Stains/Horror_Stain_03-256x256.png" id="51_okeeu"]
 [ext_resource type="Material" uid="uid://bilgmgoeavyes" path="res://Materials/StoneFloor.tres" id="54_gyv05"]
 [ext_resource type="Material" uid="uid://csv7ude4gahej" path="res://Materials/GoreWalls.tres" id="55_uaujb"]
 [ext_resource type="PackedScene" uid="uid://bc7ho6wepf3rn" path="res://Scenes/Enviorment/hammer.tscn" id="61_68yhb"]
-[ext_resource type="Texture2D" uid="uid://dqumegh3we8n7" path="res://Textures/Blood textures/256x256/Stains/Horror_Stain_02-256x256.png" id="61_j42el"]
-[ext_resource type="Texture2D" uid="uid://blvms612861b0" path="res://Textures/Blood textures/256x256/Stains/Horror_Stain_01-256x256.png" id="62_wlmt8"]
+[ext_resource type="Texture2D" uid="uid://cjjy5t3feiv1d" path="res://Textures/Blood textures/256x256/Stains/Horror_Stain_02-256x256.png" id="61_j42el"]
+[ext_resource type="Texture2D" uid="uid://cqmitma0i4akm" path="res://Textures/Blood textures/256x256/Stains/Horror_Stain_01-256x256.png" id="62_wlmt8"]
 [ext_resource type="PackedScene" uid="uid://cn0wwqw031c18" path="res://Scenes/Enviorment/burnable_body.tscn" id="64_sg70f"]
 [ext_resource type="Material" uid="uid://bir84ln42rarp" path="res://Materials/flesh.tres" id="65_3cgdo"]
-[ext_resource type="Texture2D" uid="uid://m3qalwenmqxg" path="res://Textures/Blood textures/256x256/Floor/Horror_Floor_04-256x256.png" id="65_oxjwp"]
-[ext_resource type="ArrayMesh" uid="uid://bff2lxvwedkcu" path="res://Models/Pack6/Car 05/Car5_Police.obj" id="66_3cgdo"]
+[ext_resource type="Texture2D" uid="uid://cxjem35l5jred" path="res://Textures/Blood textures/256x256/Floor/Horror_Floor_04-256x256.png" id="65_oxjwp"]
+[ext_resource type="ArrayMesh" uid="uid://drelto6i1xpwd" path="res://Models/Pack6/Car 05/Car5_Police.obj" id="66_3cgdo"]
 [ext_resource type="PackedScene" uid="uid://rafbn0pl1ey6" path="res://Scenes/Enviorment/petrol.tscn" id="67_uaoh8"]
 [ext_resource type="PackedScene" uid="uid://dxnsbqs7skgcy" path="res://Scenes/Enviorment/keypad.tscn" id="70_okeeu"]
 [ext_resource type="PackedScene" uid="uid://kw2k2fagdyi6" path="res://Scenes/Enviorment/phone.tscn" id="71_gc34d"]
 [ext_resource type="PackedScene" uid="uid://oqbpiw2rcmq8" path="res://Scenes/Enviorment/matches.tscn" id="72_5vifi"]
-[ext_resource type="AudioStream" uid="uid://4ka5i6amyr4x" path="res://Audio/SFX/Enviro/Whispers.mp3" id="73_5vifi"]
+[ext_resource type="AudioStream" uid="uid://cnptgs8kphbd1" path="res://Audio/SFX/Enviro/Whispers.mp3" id="73_5vifi"]
 [ext_resource type="Script" uid="uid://bp1goujwxm040" path="res://Scripts/Enviorment/whisper.gd" id="76_n45f4"]
 [ext_resource type="PackedScene" uid="uid://dcusaapcal5aa" path="res://Scenes/Enviorment/wood_plank.tscn" id="77_uet2j"]
 [ext_resource type="PackedScene" uid="uid://r5e2mt0x1ms3" path="res://Scenes/Enviorment/broadcast_radio.tscn" id="79_tr4ch"]
@@ -75,15 +75,15 @@
 [ext_resource type="Texture2D" uid="uid://ckvj4bfpum322" path="res://Models/Pack4/Bath_Hygiene/Textures/Hygiene.jpg" id="255_ppq5w"]
 [ext_resource type="Texture2D" uid="uid://dajmkfgbwmy8e" path="res://Models/Pack4/Bath_Hygiene/Textures/Plastic_10.png" id="262_i3bw1"]
 [ext_resource type="Texture2D" uid="uid://hwrptvceok64" path="res://Models/Pack4/Bath_Hygiene/Textures/Dirty _clothes.jpg" id="263_svg2u"]
-[ext_resource type="Texture2D" uid="uid://mpc7pxd82giw" path="res://Models/Pack5/Pe2.png" id="265_cwdv8"]
-[ext_resource type="Texture2D" uid="uid://b0i18e4fdbfi3" path="res://Models/Pack5/Pe3.png" id="266_w1r67"]
-[ext_resource type="Texture2D" uid="uid://do4ty6g5qcuhd" path="res://Models/Pack5/Pe5.png" id="267_wh1pj"]
-[ext_resource type="Texture2D" uid="uid://ctg6ubysu4wxq" path="res://Models/Pack5/Pe7.png" id="268_eudgg"]
-[ext_resource type="Texture2D" uid="uid://baa8df5l6a22t" path="res://Models/Pack5/Pe1.png" id="269_qon7h"]
-[ext_resource type="Texture2D" uid="uid://lmp7yexc85qe" path="res://Models/Pack5/Pe8.png" id="272_s1avq"]
-[ext_resource type="Texture2D" uid="uid://725cgnvu8252" path="res://Models/Pack5/Pe12.png" id="275_famjf"]
-[ext_resource type="Texture2D" uid="uid://kt5bs1vw1sno" path="res://Models/Pack5/Pe10.png" id="276_tcncw"]
-[ext_resource type="Texture2D" uid="uid://bl6y34hfy6dql" path="res://Models/Pack5/Pe11.png" id="277_664mo"]
+[ext_resource type="Texture2D" uid="uid://dstbda0r40r71" path="res://Models/Pack5/Pe2.png" id="265_cwdv8"]
+[ext_resource type="Texture2D" uid="uid://d320v4ep8aop5" path="res://Models/Pack5/Pe3.png" id="266_w1r67"]
+[ext_resource type="Texture2D" uid="uid://bftw8sxck1k8i" path="res://Models/Pack5/Pe5.png" id="267_wh1pj"]
+[ext_resource type="Texture2D" uid="uid://bhyuub78vriyo" path="res://Models/Pack5/Pe7.png" id="268_eudgg"]
+[ext_resource type="Texture2D" uid="uid://bwgyji71x2mfo" path="res://Models/Pack5/Pe1.png" id="269_qon7h"]
+[ext_resource type="Texture2D" uid="uid://b1gny0k0rp2f6" path="res://Models/Pack5/Pe8.png" id="272_s1avq"]
+[ext_resource type="Texture2D" uid="uid://dytl6bydm3mwq" path="res://Models/Pack5/Pe12.png" id="275_famjf"]
+[ext_resource type="Texture2D" uid="uid://dwm73j0vqotmk" path="res://Models/Pack5/Pe10.png" id="276_tcncw"]
+[ext_resource type="Texture2D" uid="uid://clip1sabqlk2a" path="res://Models/Pack5/Pe11.png" id="277_664mo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ayxsl"]
 albedo_texture = ExtResource("4_aqtl4")
@@ -11161,7 +11161,6 @@ uv1_triplanar = true
 
 [sub_resource type="Environment" id="Environment_j5hpt"]
 ssao_enabled = true
-fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0, 0, 0, 1)
 fog_density = 1.0
@@ -16460,7 +16459,7 @@ use_collision = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_ovnwc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.37665, 75.4765, -36.2356)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.37665, -0.52354, -33.2356)
 
 [node name="CamRotate" parent="Player" index="2"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -16546,6 +16545,17 @@ note_text = "A lamp to every soul.
 You took their light.
 
 Now you try to rekindle it."
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.711534, -0.147429, 0.687011, -0.262342, 0.851297, 0.45439, -0.65184, -0.503546, 0.56705, -13.1551, 0.424806, -5.89012)
+light_color = Color(1, 0, 0, 1)
+light_energy = 14.395
+light_size = 0.654
+light_specular = 16.0
+spot_range = 3.849
+spot_angle = 20.5227
 
 [editable path="Aparatment/Apartment/Entrance Corridor/Door"]
 [editable path="Aparatment/Apartment/Exit Corridor/Door"]
