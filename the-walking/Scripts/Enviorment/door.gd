@@ -35,6 +35,8 @@ func handle_door_open():
 			_toggle_open()
 	elif door_puzzle == puzzle_door_type.BAD_ENDING:
 		GlobalVariables.player_dialogue.emit("I can't take this anymore")
+	elif door_puzzle == puzzle_door_type.RADIO_PICKUP:
+		GlobalVariables.player_dialogue.emit("I need to pickup my radio.")
 	else:
 		GlobalVariables.player_dialogue.emit("Too heavy to move.")
 

@@ -20,3 +20,5 @@ func item_interaction(item_name : String):
 		fire_crackling.play()
 		particles.visible = true
 		GlobalVariables.bodies_burned += 1
+		if GlobalVariables.bodies_burned > 3:
+			GlobalVariables.all_bodies_burned.emit()

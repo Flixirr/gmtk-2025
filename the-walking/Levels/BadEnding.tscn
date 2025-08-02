@@ -72,7 +72,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 35
-text = "Don't leave yet. We are not finished."
+text = "So, you tried to stop it this way. Don't you think this is"
 
 [node name="Blind" type="ColorRect" parent="."]
 layout_mode = 1

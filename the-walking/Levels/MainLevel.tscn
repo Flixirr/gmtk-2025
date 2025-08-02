@@ -52,6 +52,7 @@
 [ext_resource type="PackedScene" uid="uid://kw2k2fagdyi6" path="res://Scenes/Enviorment/phone.tscn" id="71_gc34d"]
 [ext_resource type="PackedScene" uid="uid://oqbpiw2rcmq8" path="res://Scenes/Enviorment/matches.tscn" id="72_5vifi"]
 [ext_resource type="AudioStream" uid="uid://4ka5i6amyr4x" path="res://Audio/SFX/Enviro/Whispers.mp3" id="73_5vifi"]
+[ext_resource type="Script" uid="uid://bp1goujwxm040" path="res://Scripts/Enviorment/whisper.gd" id="76_n45f4"]
 [ext_resource type="PackedScene" uid="uid://dcusaapcal5aa" path="res://Scenes/Enviorment/wood_plank.tscn" id="77_uet2j"]
 [ext_resource type="PackedScene" uid="uid://r5e2mt0x1ms3" path="res://Scenes/Enviorment/broadcast_radio.tscn" id="79_tr4ch"]
 [ext_resource type="PackedScene" uid="uid://do4jdljgen5qx" path="res://Scenes/good_ending.tscn" id="82_gc34d"]
@@ -5066,8 +5067,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hhhlv")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gc34d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6n2ob"]
 resource_name = "Box_Pizza"
@@ -11162,6 +11161,7 @@ uv1_triplanar = true
 
 [sub_resource type="Environment" id="Environment_j5hpt"]
 ssao_enabled = true
+fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0, 0, 0, 1)
 fog_density = 1.0
@@ -13493,7 +13493,7 @@ skeleton = NodePath("")
 [node name="Decal" type="Decal" parent="Aparatment2/Bloody Knife2"]
 transform = Transform3D(0.013145, -8.0844e-16, 0.0102463, 0.0102463, -7.28524e-10, -0.013145, 4.47882e-10, 0.0166667, -5.74585e-10, -0.000634432, -0.00367229, -0.00109118)
 size = Vector3(0.266912, 0.361359, 0.269403)
-texture_albedo = SubResource("CompressedTexture2D_gc34d")
+texture_albedo = ExtResource("62_wlmt8")
 
 [node name="Box_Pizza_001" type="MeshInstance3D" parent="Aparatment2"]
 transform = Transform3D(12.941, 7.58037e-06, -48.2963, 41.8258, 25, 11.2072, 24.1481, -43.3013, 6.47047, -12.3456, 0.958992, -18.0251)
@@ -14516,7 +14516,7 @@ transform = Transform3D(0.634528, 0, -0.7729, 0, 1, 0, 0.7729, 0, 0.634528, -11.
 note_text = "You did this."
 
 [node name="Sink Head" type="MeshInstance3D" parent="Aparatment3"]
-transform = Transform3D(4.48288, -19.3185, -2.58819, -16.7303, -5.17638, 9.65926, -10, 4.76837e-07, -17.3205, -17.4784, 1.61718, -9.45764)
+transform = Transform3D(15.627, 8.62534, -9.02225, 2.28367, 12.2368, 15.6539, 12.2712, -13.2614, 8.57635, -17.4784, 1.61718, -9.45764)
 mesh = SubResource("ArrayMesh_q1m0v")
 skeleton = NodePath("")
 
@@ -14573,7 +14573,7 @@ max_distance = 10.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19908, -0.0846405, -0.284765)
 
 [node name="AudioStreamPlayer3D" parent="Aparatment3/ScareVictim" index="2"]
-max_distance = 6.0
+max_distance = 8.0
 
 [node name="Roof" type="CSGBox3D" parent="Aparatment3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 4, -12)
@@ -16300,6 +16300,7 @@ volume_db = 10.0
 autoplay = true
 max_distance = 8.0
 bus = &"SFX"
+script = ExtResource("76_n45f4")
 
 [node name="Cube_026" type="MeshInstance3D" parent="Aparatment5"]
 transform = Transform3D(14.6909, -1.32424e-07, 3.02951, -3.02951, -6.4216e-07, 14.6909, 0, -15, -6.5567e-07, -7.1707, 1.2753, -14.4249)
@@ -16519,7 +16520,7 @@ note_text = "Daddy liked to drink. And argue.
 
 And god help us when he argued.
 
-You still hear him crying.
+You can still hear him crying.
 
 Rejecting who he was.
 
@@ -16529,13 +16530,11 @@ No wonder mommy left him."
 transform = Transform3D(0.948997, 1.37815e-08, 0.315285, 0.315285, -4.1482e-08, -0.948997, 0, 1, -4.37114e-08, -16.0769, 28.1873, -18.4731)
 note_text = "After divorce mommy had many men come to the house.
 
-And you just HAD to listen.
+And you remember this very well.
 
-It's not like you were forced. 
+After all, this is one of the reasons you became so aggressive.
 
-You really enjoyed tortuting yourself.
-
-Fortunately for me, you decided to also torture others."
+So wild."
 
 [node name="GoodEnding" parent="." instance=ExtResource("82_gc34d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.8578, -1.5, -16.4226)
@@ -16552,6 +16551,14 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Noose"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0274048, -0.802582, -0.0126953)
 shape = SubResource("BoxShape3D_5refa")
+
+[node name="Note5" parent="." instance=ExtResource("3_idxu3")]
+transform = Transform3D(-4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, -1, -1, -4.37114e-08, -4.37114e-08, -11.8755, 55.3677, -11.2008)
+note_text = "A lamp for each victim.
+
+You killed them.
+
+Now you bring them back."
 
 [editable path="Aparatment/Apartment/Entrance Corridor/Door"]
 [editable path="Aparatment/Apartment/Exit Corridor/Door"]

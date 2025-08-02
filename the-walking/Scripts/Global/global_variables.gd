@@ -13,6 +13,7 @@ signal keypad_puzzle_complete
 signal radio_pickup
 signal radio_narrative
 signal phone_start
+signal all_bodies_burned
 
 signal player_dialogue(dialogue)
 signal system_dialogue(dialogue)

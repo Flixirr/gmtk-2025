@@ -293,7 +293,7 @@ shape = SubResource("BoxShape3D_7v2fn")
 stream = ExtResource("3_c0h6b")
 volume_db = 10.0
 autoplay = true
-max_distance = 4.0
+max_distance = 7.0
 bus = &"SFX"
 
 [node name="Timer" type="Timer" parent="."]

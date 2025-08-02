@@ -13,11 +13,17 @@ config_version=5
 config/name="the-walking"
 run/main_scene="uid://ukrkwqo4reae"
 config/features=PackedStringArray("4.4", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
 
 GlobalVariables="*res://Scripts/Global/global_variables.gd"
+
+[display]
+
+window/size/mode=2
 
 [filesystem]
 
