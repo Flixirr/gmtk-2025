@@ -3,9 +3,12 @@ class_name Door
 
 @onready var animation_player: AnimationPlayer = $"../AnimationPlayer"
 @export var is_open: bool = false
+
+@export var is_narrative_radio_trigger = false
+@export var is_narrative_phone_trigger = false
 var entrance_sealed = false
 
-enum puzzle_door_type {NO_PUZZLE, LAMP_PUZZLE, ENTRANCE, RADIO_PICKUP}
+enum puzzle_door_type {NO_PUZZLE, LAMP_PUZZLE, ENTRANCE, RADIO_PICKUP, KEYPAD_PUZZLE, BAD_ENDING}
 @export var door_puzzle : puzzle_door_type = puzzle_door_type.NO_PUZZLE
 
 func _ready() -> void:
@@ -15,6 +18,12 @@ func _ready() -> void:
 		GlobalVariables.radio_pickup.connect(_door_open)
 
 func handle_door_open():
+	if is_narrative_radio_trigger:
+		GlobalVariables.radio_narrative.emit()
+		is_narrative_radio_trigger = false
+	if is_narrative_phone_trigger:
+		GlobalVariables.phone_start.emit()
+		is_narrative_phone_trigger = false
 	if door_puzzle == puzzle_door_type.NO_PUZZLE:
 		_toggle_open()
 	elif door_puzzle == puzzle_door_type.ENTRANCE:
@@ -22,6 +31,8 @@ func handle_door_open():
 			GlobalVariables.player_dialogue.emit("These won't open.")
 		else:
 			_toggle_open()
+	elif door_puzzle == puzzle_door_type.BAD_ENDING:
+		GlobalVariables.player_dialogue.emit("I can't take this anymore")
 	else:
 		GlobalVariables.player_dialogue.emit("Too heavy to move.")
 

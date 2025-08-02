@@ -46,6 +46,7 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	GlobalVariables.player_dialogue.connect(_on_dialogue_received)
 	GlobalVariables.system_dialogue.connect(_on_system_dialogue_received)
+	GlobalVariables.phone_dialogue.connect(_on_phone_dialogue_received)
 	
 
 func rotate_cam(angles):
@@ -53,16 +54,17 @@ func rotate_cam(angles):
 
 
 func _get_inventory_items():
-	item_selected = 0
 	in_inventory = []
 	for item in inventory_items.get_children():
 		if item is InventoryItem:
 			in_inventory.append(item)
 			item.visible = false
 	
-	if item_selected < in_inventory.size():
+	if item_selected < in_inventory.size() and item_selected >= 0:
 		item_name.text = in_inventory[item_selected].item_name
 		in_inventory[item_selected].visible = true
+	else:
+		item_selected = 0
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -209,6 +211,8 @@ func _handle_raycast():
 			note_ui.visible = true
 			note_text.text = raycast_hit.note_text
 			is_in_focus = true
+		elif raycast_hit is Phone:
+			raycast_hit.interact()
 		elif raycast_hit is Lamp:
 			raycast_hit.handle_toggle()
 		elif raycast_hit is Radio:
@@ -233,6 +237,11 @@ func _on_dialogue_received(dialogue_txt):
 func _on_system_dialogue_received(dialogue_txt):
 	$PlayerUI/Player/Timer.stop()
 	dialogue_text.text = "[b][color=blue]System:[/color][/b] %s" % dialogue_txt
+	$PlayerUI/Player/Timer.start(3)
+
+func _on_phone_dialogue_received(dialogue_txt):
+	$PlayerUI/Player/Timer.stop()
+	dialogue_text.text = "[b][color=red]Phone:[/color][/b] %s" % dialogue_txt
 	$PlayerUI/Player/Timer.start(3)
 
 func _on_timer_timeout() -> void:

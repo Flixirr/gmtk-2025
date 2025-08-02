@@ -6,8 +6,12 @@ extends Node
 
 enum item_name {RADIO, HAMMER, GAS, LIGHTER}
 signal lamp_puzzle_complete
+signal keypad_puzzle_complete
 
 signal radio_pickup
+signal radio_narrative
+signal phone_start
 
 signal player_dialogue(dialogue)
 signal system_dialogue(dialogue)
+signal phone_dialogue(dialogue)

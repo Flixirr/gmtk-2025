@@ -1,18 +1,16 @@
-[gd_scene load_steps=10 format=4 uid="uid://bihonq1jcroaw"]
+[gd_scene load_steps=8 format=4 uid="uid://r5e2mt0x1ms3"]
 
-[ext_resource type="Script" uid="uid://c6l7r5ouyhxrg" path="res://Scripts/Enviorment/radio.gd" id="1_lrbga"]
-[ext_resource type="Texture2D" uid="uid://ch38cuhga1ncy" path="res://Models/Pack2/Objects_Interior(Village)_Alpha/Textures/Radio_01.png" id="2_bwr08"]
-[ext_resource type="PackedScene" uid="uid://cjx3rc183ftcx" path="res://Scenes/Player/inventory_radio.tscn" id="2_lgygd"]
-[ext_resource type="AudioStream" uid="uid://diyjcip2hogyi" path="res://Audio/Music/wheelchair horror ost[radio].mp3" id="4_bwr08"]
-[ext_resource type="AudioStream" uid="uid://cegyjwpfu4l2c" path="res://Audio/SFX/Enviro/ItemPickup.mp3" id="5_lgygd"]
+[ext_resource type="Script" uid="uid://dt2lxfw0i2744" path="res://Scripts/Enviorment/trigger_radio.gd" id="1_vspow"]
+[ext_resource type="AudioStream" uid="uid://s5tl5f805ogt" path="res://Audio/SFX/Enviro/radio_broadcast.mp3" id="2_msyis"]
+[ext_resource type="Texture2D" uid="uid://ch38cuhga1ncy" path="res://Models/Pack2/Objects_Interior(Village)_Alpha/Textures/Radio_01.png" id="3_po0go"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p5gvt"]
 resource_name = "Radio_01"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_bwr08")
+albedo_texture = ExtResource("3_po0go")
 emission_enabled = true
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_lgygd"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_iflqt"]
 _surfaces = [{
 "aabb": AABB(-0.00664706, -0.00299782, -0.00285434, 0.0132941, 0.00599565, 0.0176135),
 "format": 34359742465,
@@ -26,7 +24,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_24vgu"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_mf0g1"]
 resource_name = "Radio_01"
 _surfaces = [{
 "aabb": AABB(-0.00664706, -0.00299782, -0.00285434, 0.0132941, 0.00599565, 0.0176135),
@@ -42,31 +40,24 @@ _surfaces = [{
 "vertex_data": PackedByteArray("ls/ZuyB3RDvUDzs7ls/ZuyB3RLvUDzs7ls/ZuyB3RLvUDzu7ls/ZuyB3RDvUDzu7ls/ZOyB3RDvUDzs7ls/ZuyB3RDvUDzs7ls/ZuyB3RDvUDzu7ls/ZOyB3RDvUDzu7ls/ZOyB3RLvUDzs7ls/ZOyB3RDvUDzs7ls/ZOyB3RDvUDzu7ls/ZOyB3RLvUDzu7ls/ZuyB3RLvUDzs7ls/ZOyB3RLvUDzs7ls/ZOyB3RLvUDzu7ls/ZuyB3RLvUDzu7ls/ZOyB3RLvUDzu7ls/ZOyB3RDvUDzu7ls/ZuyB3RDvUDzu7ls/ZuyB3RLvUDzu7ls/ZuyB3RLvUDzs7ls/ZuyB3RDvUDzs7ls/ZOyB3RDvUDzs7ls/ZOyB3RLvUDzs70tegO7/20Tq2ZCQ7PlyZO5Y+4zpu0HE8PlyZOyHnAju2ZCQ7quCRO8H20Tq2ZCQ7PlyZO5Y+4zpu0HE80tegO7/20Tq2ZCQ7PlyZOyHnAju2ZCQ7PlyZO5Y+4zpu0HE8quCRO8H20Tq2ZCQ7AAD/f/7//n8AAP9//v/+fwAA/3/+//5/AAD/f/7//n//f////3//P/9/////f/8//3////9//z//f////3//P////3//////////f/////////9//////////3///////38AAP9//7//fwAA/3//v/9/AAD/f/+//38AAP9//7///////38AAP//////fwAA//////9/AAD//////38AAP9//3//f////3//f/9/////f/9//3/+//9//3//f/7/gtB7rnSuwJeC0HuudK7Al4LQe650rsCX/39cAR/9A8D/f1wBH/0DwP9/XAEf/QPAfC97ropRPmh8L3uuilE+aHwve66KUT5o")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_lgygd")
+shadow_mesh = SubResource("ArrayMesh_iflqt")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_oy1bq"]
-size = Vector3(0.541748, 0.256409, 0.251709)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iyvmg"]
+points = PackedVector3Array(-0.00643398, -0.003, -0.00263014, 0.00674524, 0.00304048, 0.00314147, 0.00477703, 0.00191634, 0.0149387, -0.00674048, 0.00304048, 0.00314147, 0.00674524, -0.00314048, 0.00314147, 0.0066, 0.00297391, -0.0028451, -0.00674048, -0.00314048, 0.00314147, -0.0066, 0.00297609, -0.00285145, 0.00643875, -0.003, -0.00263014, 0.00449718, 0.0016356, 0.0149387, 0.00449718, 0.00191634, 0.0149387, 0.00477703, 0.0016356, 0.0149387)
 
-[node name="Radio" type="StaticBody3D"]
-script = ExtResource("1_lrbga")
-inventory_item = ExtResource("2_lgygd")
+[node name="BroadcastRadio" type="StaticBody3D"]
+script = ExtResource("1_vspow")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_msyis")
+volume_db = 5.0
+bus = &"SFX"
 
 [node name="Radio_01" type="MeshInstance3D" parent="."]
 transform = Transform3D(-39.5679, 3.45914e-06, 4.12361e-13, 0, -4.71686e-06, 39.5679, 3.45914e-06, 39.5679, 4.71686e-06, 0, 0, 0)
-mesh = SubResource("ArrayMesh_24vgu")
+mesh = SubResource("ArrayMesh_mf0g1")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00378418, 0.0105896, 0.000366211)
-shape = SubResource("BoxShape3D_oy1bq")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("4_bwr08")
-volume_db = 10.0
-autoplay = true
-max_distance = 11.0
-bus = &"Music"
-parameters/looping = true
-
-[node name="ObjectPickup" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("5_lgygd")
+transform = Transform3D(-39.5679, 3.45914e-06, 4.12361e-13, 0, -4.71686e-06, 39.5679, 3.45914e-06, 39.5679, 4.71686e-06, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_iyvmg")

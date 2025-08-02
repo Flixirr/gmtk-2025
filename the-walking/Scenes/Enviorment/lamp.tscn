@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dkqnnpp7fp706" path="res://Scripts/Enviorment/lamp.gd" id="1_libks"]
 [ext_resource type="Texture2D" uid="uid://d001yo3iu4twj" path="res://Models/Pack2/Objects_Interior(Village)_Alpha/Textures/Desk_lamp.png" id="2_r8y26"]
-[ext_resource type="Texture2D" uid="uid://d320v4ep8aop5" path="res://Models/Pack5/Pe3.png" id="3_xow1e"]
+[ext_resource type="Texture2D" uid="uid://b0i18e4fdbfi3" path="res://Models/Pack5/Pe3.png" id="3_xow1e"]
 [ext_resource type="Texture2D" uid="uid://cqqfou4x2kqjb" path="res://Models/Pack/Cutlery.png" id="4_2iaoh"]
-[ext_resource type="AudioStream" uid="uid://bfhaq2pb5548j" path="res://Audio/SFX/Enviro/KnifeStab.mp3" id="5_2iaoh"]
+[ext_resource type="AudioStream" uid="uid://dagl26brk3bb7" path="res://Audio/SFX/Enviro/KnifeStab.mp3" id="5_2iaoh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qih64"]
 resource_name = "Desk_lamp"

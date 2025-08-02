@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dq67bfw01xikl" path="res://Scripts/Enviorment/hammer.gd" id="1_c8aln"]
 [ext_resource type="Texture2D" uid="uid://dhp4x6a2bhjjn" path="res://Models/survival/Textures/match.png" id="1_idvgw"]
 [ext_resource type="PackedScene" uid="uid://8dnimhifceec" path="res://Scenes/Player/inventory_matches.tscn" id="2_86ur3"]
-[ext_resource type="AudioStream" uid="uid://cwm0t4ics2vf1" path="res://Audio/SFX/Enviro/Door_close.mp3" id="4_v35s7"]
+[ext_resource type="AudioStream" uid="uid://cegyjwpfu4l2c" path="res://Audio/SFX/Enviro/ItemPickup.mp3" id="4_v35s7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_38y3k"]
 resource_name = "match"

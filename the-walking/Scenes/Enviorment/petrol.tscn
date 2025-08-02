@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c5u7c82o55y2o" path="res://Models/mine/Textures/Petrol_Can.png" id="1_6123s"]
 [ext_resource type="Script" uid="uid://dq67bfw01xikl" path="res://Scripts/Enviorment/hammer.gd" id="1_ftidk"]
 [ext_resource type="PackedScene" uid="uid://iwq1rgtdtpp4" path="res://Scenes/Player/inventory_petrol.tscn" id="2_ljux1"]
-[ext_resource type="AudioStream" uid="uid://cwm0t4ics2vf1" path="res://Audio/SFX/Enviro/Door_close.mp3" id="4_lkib7"]
+[ext_resource type="AudioStream" uid="uid://cegyjwpfu4l2c" path="res://Audio/SFX/Enviro/ItemPickup.mp3" id="4_lkib7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ui03p"]
 resource_name = "Petrol_Can"
