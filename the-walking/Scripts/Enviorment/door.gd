@@ -16,6 +16,8 @@ func _ready() -> void:
 		GlobalVariables.lamp_puzzle_complete.connect(_door_open)
 	elif door_puzzle == puzzle_door_type.RADIO_PICKUP:
 		GlobalVariables.radio_pickup.connect(_door_open)
+	elif door_puzzle == puzzle_door_type.KEYPAD_PUZZLE:
+		GlobalVariables.keypad_puzzle_complete.connect(_door_open)
 
 func handle_door_open():
 	if is_narrative_radio_trigger:

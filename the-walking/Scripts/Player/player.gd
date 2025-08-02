@@ -19,6 +19,7 @@ const JUMP_VELOCITY = 3.0
 @onready var dialogue_text = $PlayerUI/Player/DialogueText
 
 @onready var note_ui = $PlayerUI/Note
+@onready var keypad_ui = $PlayerUI/Keypad
 @onready var note_text = $PlayerUI/Note/RichTextLabel
 
 @onready var inventory_ui = $PlayerUI/InventoryUI
@@ -70,19 +71,26 @@ func _get_inventory_items():
 func _unhandled_input(event: InputEvent) -> void:
 	# handle focus
 	if event.is_action_pressed("Inventory"):
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		if is_in_focus and note_ui.visible:
 			player_ui.visible = false
 			note_ui.visible = false
+			keypad_ui.visible = false
+			pause_menu.visible = false
 			_toggle_inventory_visibility(true)
 		elif is_in_focus:
 			is_in_focus = false
 			player_ui.visible = true
 			note_ui.visible = false
+			keypad_ui.visible = false
+			pause_menu.visible = false
 			_toggle_inventory_visibility(false)
 		else:
 			is_in_focus = true
 			player_ui.visible = false
 			note_ui.visible = false
+			keypad_ui.visible = false
+			pause_menu.visible = false
 			_toggle_inventory_visibility(true)
 	
 	if event.is_action_pressed("pause"):
@@ -91,6 +99,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			pause_menu.visible = true
 			player_ui.visible = false
 			note_ui.visible = false
+			keypad_ui.visible = false
 			_toggle_inventory_visibility(false)
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
@@ -98,6 +107,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			pause_menu.visible = false
 			player_ui.visible = true
 			note_ui.visible = false
+			keypad_ui.visible = false
 			_toggle_inventory_visibility(false)
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
@@ -119,6 +129,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				is_in_focus = false
 				player_ui.visible = true
 				note_ui.visible = false
+				keypad_ui.visible = false
 				_toggle_inventory_visibility(false)
 		return
 	
@@ -203,13 +214,23 @@ func _handle_raycast():
 			is_in_focus = false
 			player_ui.visible = true
 			note_ui.visible = false
+			keypad_ui.visible = false
+			pause_menu.visible = false
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			_toggle_inventory_visibility(false)
 		elif raycast_hit is Door:
 			raycast_hit.handle_door_open()
 		elif raycast_hit is Note:
 			player_ui.visible = false
+			keypad_ui.visible = false
 			note_ui.visible = true
 			note_text.text = raycast_hit.note_text
+			is_in_focus = true
+		elif raycast_hit is Keypad:
+			player_ui.visible = false
+			keypad_ui.visible = true
+			note_ui.visible = false
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			is_in_focus = true
 		elif raycast_hit is Phone:
 			raycast_hit.interact()

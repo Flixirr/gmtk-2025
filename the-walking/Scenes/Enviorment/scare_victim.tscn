@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=4 uid="uid://btsobpwtot2e7"]
 
 [ext_resource type="Script" uid="uid://bayfnakong1bh" path="res://Scripts/Enviorment/scare_victim.gd" id="1_lmt5s"]
-[ext_resource type="Texture2D" uid="uid://dytl6bydm3mwq" path="res://Models/Pack5/Pe12.png" id="2_k5srs"]
-[ext_resource type="AudioStream" uid="uid://bjbmspvyypsgs" path="res://Audio/SFX/Enviro/Crying.mp3" id="3_c0h6b"]
+[ext_resource type="Texture2D" uid="uid://725cgnvu8252" path="res://Models/Pack5/Pe12.png" id="2_k5srs"]
+[ext_resource type="AudioStream" uid="uid://di1ofnarnm3vm" path="res://Audio/SFX/Enviro/Crying.mp3" id="3_c0h6b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mspbw"]
 resource_name = "Material.012"

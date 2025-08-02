@@ -1,15 +1,19 @@
-[gd_scene load_steps=18 format=3 uid="uid://ddv2bijbuunr2"]
+[gd_scene load_steps=22 format=3 uid="uid://ddv2bijbuunr2"]
 
 [ext_resource type="Script" uid="uid://dn8nalqdom7xp" path="res://Scripts/Player/player.gd" id="1_uvnfx"]
+[ext_resource type="Script" uid="uid://c50wh21dd8nl0" path="res://Scripts/UI/keypad.gd" id="2_74mp2"]
 [ext_resource type="Shader" uid="uid://botwyllqsh4w6" path="res://Scripts/Shaders/vhs_shader.gdshader" id="2_dd0ac"]
+[ext_resource type="AudioStream" uid="uid://o2qtcg185w80" path="res://Audio/SFX/Enviro/KeypadButtonPress.mp3" id="3_7g0yx"]
 [ext_resource type="Script" uid="uid://2rwjo1cdwh5q" path="res://Scripts/UI/pause_menu.gd" id="3_jlvik"]
-[ext_resource type="AudioStream" uid="uid://ns3ygajc5j83" path="res://Audio/SFX/Player/Footstep1.mp3" id="4_0u5uq"]
+[ext_resource type="AudioStream" uid="uid://b6d4i8txwim1v" path="res://Audio/SFX/Player/Footstep1.mp3" id="4_0u5uq"]
+[ext_resource type="AudioStream" uid="uid://cmsm5fcvgd5oi" path="res://Audio/SFX/Enviro/KeypadFail.mp3" id="4_dey5f"]
 [ext_resource type="Script" uid="uid://b633w5ysf08kg" path="res://Scripts/UI/vol_slider.gd" id="4_gk6dx"]
 [ext_resource type="Script" uid="uid://dl01qdw4w3m43" path="res://Scripts/UI/sens_slider.gd" id="5_gk6dx"]
-[ext_resource type="AudioStream" uid="uid://dfrn13dtyvuvv" path="res://Audio/SFX/Player/Footstep2.mp3" id="5_jlvik"]
-[ext_resource type="AudioStream" uid="uid://bdt8b54xutk8u" path="res://Audio/SFX/Player/Footstep3.mp3" id="6_gk6dx"]
+[ext_resource type="AudioStream" uid="uid://bc0omscgt26rr" path="res://Audio/SFX/Player/Footstep2.mp3" id="5_jlvik"]
+[ext_resource type="AudioStream" uid="uid://b71a18ggaiq88" path="res://Audio/SFX/Enviro/KeypadSuccess.mp3" id="5_r5xpd"]
+[ext_resource type="AudioStream" uid="uid://2o4yifqadfow" path="res://Audio/SFX/Player/Footstep3.mp3" id="6_gk6dx"]
 [ext_resource type="Script" uid="uid://cd6p06segmdjb" path="res://Scripts/UI/VHS_Option.gd" id="6_jhyir"]
-[ext_resource type="AudioStream" uid="uid://bcgbhnyd17o0y" path="res://Audio/SFX/Player/Footstep4.mp3" id="7_jhyir"]
+[ext_resource type="AudioStream" uid="uid://ppnhs58m3w18" path="res://Audio/SFX/Player/Footstep4.mp3" id="7_jhyir"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dncm7"]
 
@@ -260,6 +264,157 @@ bbcode_enabled = true
 text = "[F/TAB] Exit inventory [E] Use item [A/D] Change Item"
 horizontal_alignment = 1
 
+[node name="Keypad" type="Control" parent="PlayerUI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_74mp2")
+
+[node name="ColorRect" type="ColorRect" parent="PlayerUI/Keypad"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.184314)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerUI/Keypad"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Input" type="Label" parent="PlayerUI/Keypad/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+
+[node name="Numpad1" type="HBoxContainer" parent="PlayerUI/Keypad/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="PlayerUI/Keypad/VBoxContainer/Numpad1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "1"
+
+[node name="Button2" type="Button" parent="PlayerUI/Keypad/VBoxContainer/Numpad1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "2"
+
+[node name="Button3" type="Button" parent="PlayerUI/Keypad/VBoxContainer/Numpad1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "3
+"
+
+[node name="Numpad2" type="HBoxContainer" parent="PlayerUI/Keypad/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="PlayerUI/Keypad/VBoxContainer/Numpad2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "4
+"
+
+[node name="Button2" type="Button" parent="PlayerUI/Keypad/VBoxContainer/Numpad2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "5
+"
+
+[node name="Button3" type="Button" parent="PlayerUI/Keypad/VBoxContainer/Numpad2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "6
+"
+
+[node name="Numpad3" type="HBoxContainer" parent="PlayerUI/Keypad/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="PlayerUI/Keypad/VBoxContainer/Numpad3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "7"
+
+[node name="Button2" type="Button" parent="PlayerUI/Keypad/VBoxContainer/Numpad3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "8"
+
+[node name="Button3" type="Button" parent="PlayerUI/Keypad/VBoxContainer/Numpad3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "9
+"
+
+[node name="Numpad4" type="HBoxContainer" parent="PlayerUI/Keypad/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button2" type="Button" parent="PlayerUI/Keypad/VBoxContainer/Numpad4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Delete"
+
+[node name="Button4" type="Button" parent="PlayerUI/Keypad/VBoxContainer/Numpad4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "0"
+
+[node name="Button3" type="Button" parent="PlayerUI/Keypad/VBoxContainer/Numpad4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Enter
+"
+
+[node name="Label2" type="Label" parent="PlayerUI/Keypad/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 35
+text = "[F] Exit"
+horizontal_alignment = 1
+
+[node name="KeypadButtonPress" type="AudioStreamPlayer3D" parent="PlayerUI/Keypad"]
+stream = ExtResource("3_7g0yx")
+attenuation_model = 3
+panning_strength = 0.0
+bus = &"SFX"
+
+[node name="KeypadFail" type="AudioStreamPlayer3D" parent="PlayerUI/Keypad"]
+stream = ExtResource("4_dey5f")
+attenuation_model = 3
+panning_strength = 0.0
+bus = &"SFX"
+
+[node name="KeypadSuccess" type="AudioStreamPlayer3D" parent="PlayerUI/Keypad"]
+stream = ExtResource("5_r5xpd")
+attenuation_model = 3
+panning_strength = 0.0
+bus = &"SFX"
+
+[node name="VHS_Shader" type="ColorRect" parent="PlayerUI"]
+material = SubResource("ShaderMaterial_0u5uq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
 [node name="Note" type="Control" parent="PlayerUI"]
 visible = false
 layout_mode = 3
@@ -287,10 +442,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.5
-offset_top = -199.5
-offset_right = 150.5
-offset_bottom = 199.5
+offset_left = -392.0
+offset_top = -199.0
+offset_right = 392.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -319,15 +474,6 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 25
 text = "Press [F] to close"
 horizontal_alignment = 1
-
-[node name="VHS_Shader" type="ColorRect" parent="PlayerUI"]
-material = SubResource("ShaderMaterial_0u5uq")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
 
 [node name="PauseMenu" type="Control" parent="PlayerUI"]
 visible = false
@@ -488,4 +634,16 @@ libraries = {
 }
 
 [connection signal="timeout" from="PlayerUI/Player/Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="PlayerUI/Keypad/VBoxContainer/Numpad1/Button" to="PlayerUI/Keypad" method="_on_1_button_pressed"]
+[connection signal="pressed" from="PlayerUI/Keypad/VBoxContainer/Numpad1/Button2" to="PlayerUI/Keypad" method="_on_button_2_pressed"]
+[connection signal="pressed" from="PlayerUI/Keypad/VBoxContainer/Numpad1/Button3" to="PlayerUI/Keypad" method="_on_button_3_pressed"]
+[connection signal="pressed" from="PlayerUI/Keypad/VBoxContainer/Numpad2/Button" to="PlayerUI/Keypad" method="_on_4_button_pressed"]
+[connection signal="pressed" from="PlayerUI/Keypad/VBoxContainer/Numpad2/Button2" to="PlayerUI/Keypad" method="_on_button_5_pressed"]
+[connection signal="pressed" from="PlayerUI/Keypad/VBoxContainer/Numpad2/Button3" to="PlayerUI/Keypad" method="_on_button_6_pressed"]
+[connection signal="pressed" from="PlayerUI/Keypad/VBoxContainer/Numpad3/Button" to="PlayerUI/Keypad" method="_on_button_7_pressed"]
+[connection signal="pressed" from="PlayerUI/Keypad/VBoxContainer/Numpad3/Button2" to="PlayerUI/Keypad" method="_on_button_8_pressed"]
+[connection signal="pressed" from="PlayerUI/Keypad/VBoxContainer/Numpad3/Button3" to="PlayerUI/Keypad" method="_on_button_9_pressed"]
+[connection signal="pressed" from="PlayerUI/Keypad/VBoxContainer/Numpad4/Button2" to="PlayerUI/Keypad" method="_on_button_delete_pressed"]
+[connection signal="pressed" from="PlayerUI/Keypad/VBoxContainer/Numpad4/Button4" to="PlayerUI/Keypad" method="_on_button_0_pressed"]
+[connection signal="pressed" from="PlayerUI/Keypad/VBoxContainer/Numpad4/Button3" to="PlayerUI/Keypad" method="_on_button_enter_pressed"]
 [connection signal="toggled" from="PlayerUI/PauseMenu/ColorRect/VBoxContainer/SensitivitySlider2/CheckBox" to="PlayerUI/PauseMenu/ColorRect/VBoxContainer/SensitivitySlider2/CheckBox" method="_on_toggled"]

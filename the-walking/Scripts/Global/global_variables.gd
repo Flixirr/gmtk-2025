@@ -4,6 +4,8 @@ extends Node
 @export var bodies_burned = 0
 @export var is_lamp_puzzle_complete = false
 
+@export var keypad_password = "3787"
+
 enum item_name {RADIO, HAMMER, GAS, LIGHTER}
 signal lamp_puzzle_complete
 signal keypad_puzzle_complete
